@@ -47,10 +47,10 @@ hi DiffText                   guibg=Red         gui=bold                        
 hi Cursor       guifg=#000020 guibg=#ffaf38                           ctermfg=bg          ctermbg=brown
 hi lCursor      guifg=#ffffff guibg=#000000                           ctermfg=bg          ctermbg=darkgreen
 
-hi Comment      guifg=#80a0ff                                         ctermfg=blue                          cterm=none
+hi Comment      guifg=#808080                                         ctermfg=darkgray                      cterm=none
 hi Constant     guifg=#ef4848                                         ctermfg=lightred                      cterm=none
 hi Special      guifg=orange                    gui=none              ctermfg=brown                         cterm=none
-hi Identifier   guifg=#38d6c2                                         ctermfg=cyan                          cterm=none
+hi Identifier   guifg=#1e79db                                         ctermfg=blue                          cterm=none
 hi Statement    guifg=#e3c22d                   gui=none              ctermfg=yellow                        cterm=none 
 hi PreProc      guifg=#c44db7                   gui=none              ctermfg=magenta                       cterm=none
 hi type         guifg=#78d520                   gui=none              ctermfg=green                         cterm=none
