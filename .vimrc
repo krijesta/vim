@@ -7,22 +7,22 @@ set ruler                      " show cursor position
 set showcmd                    " display incomplete commands
 set incsearch                  " do incremental searching
 
-" search highlighting toggle
+" Search highlighting toggle
 nnoremap <F10> :set hls<CR>:exec "let @/='\\<".expand("<cword>")."\\>'"<CR>
 nnoremap <F11> :nohls<CR>
 set hls " search highlighting on by default
 
-" cycling through buffers
+" Cycling through buffers
 nnoremap <A-Right> :bnext<CR>
 nnoremap <A-Left> :bprevious<CR>
 set hidden " don't discard buffer when switching away
 
-" replace word under cursor
+" Replace word under cursor
 " usage: type \s on "foo" and then type "bar/g" to
 "        replace foo with bar
 :nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
 
-" code indenting and formatting
+" Code indenting and formatting
 filetype plugin on
 filetype indent on
 set autoindent
@@ -31,16 +31,20 @@ set shiftwidth=4
 set expandtab
 set foldmethod=marker
 
-" window size
-"winpos 20 20
-"set lines=24
-"set columns=80
-
-" Toggle insert mode
-"map! ii <Esc>
-
-" font and color scheme
+" Font and color scheme
 syntax on
 set guifont=Monospace\ 14
 exe "source ~/.vim/themes/enable16colors.vim"
 exe "source ~/.vim/themes/jake.vim"
+
+" Haskell
+au Bufenter *.hs compiler ghc
+au Bufenter *.hs setlocal tabstop=2
+au Bufenter *.hs setlocal shiftwidth=2
+let g:haddock_browser = "firefox"
+let g:haddock_indexfiledir = expand("~/.vim/cache/")
+
+if !filewritable(g:haddock_indexfiledir)
+    echoerr g:haddock_indexfiledir . " is not writable"
+    finish
+end
