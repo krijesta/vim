@@ -1,0 +1,6 @@
+My Vim Settings
+
+  Clone the repository to ~/.vim then create a ~/.vimrc with the following
+  contents.
+
+    exe "source ~/.vim/.vimrc"
