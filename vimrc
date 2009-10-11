@@ -33,7 +33,7 @@ set foldmethod=marker
 
 " Font and color scheme
 syntax on
-set guifont=Monospace\ 14
+set guifont=Monospace\ 15
 exe "source ~/.vim/themes/enable16colors.vim"
 exe "source ~/.vim/themes/jake.vim"
 
@@ -41,7 +41,7 @@ exe "source ~/.vim/themes/jake.vim"
 au Bufenter *.hs compiler ghc
 au Bufenter *.hs setlocal tabstop=2
 au Bufenter *.hs setlocal shiftwidth=2
-let g:haddock_browser = "firefox"
+let g:haddock_browser = "firefox-3.5"
 let g:haddock_indexfiledir = expand("~/.vim/cache/")
 
 if !filewritable(g:haddock_indexfiledir)
