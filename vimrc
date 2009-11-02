@@ -22,6 +22,10 @@ set hidden " don't discard buffer when switching away
 "        replace foo with bar
 :nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
 
+" Make
+:nnoremap <F5> :w<CR> :!runhaskell <C-R>=expand("%:t")<CR><CR>
+:nnoremap <F6> :w<CR> :make<CR>
+
 " Code indenting and formatting
 filetype plugin on
 filetype indent on
@@ -37,6 +41,10 @@ set guifont=Monospace\ 15
 exe "source ~/.vim/themes/enable16colors.vim"
 exe "source ~/.vim/themes/jake.vim"
 
+" HTML
+au Bufenter *.html setlocal tabstop=2
+au Bufenter *.html setlocal shiftwidth=2
+
 " Haskell
 au Bufenter *.hs compiler ghc
 au Bufenter *.hs setlocal tabstop=2
@@ -48,3 +56,17 @@ if !filewritable(g:haddock_indexfiledir)
     echoerr g:haddock_indexfiledir . " is not writable"
     finish
 end
+
+function! HaskellComment()
+    if getline(".") =~ '--'
+        let hls=@/
+        s/^--//
+        let @/=hls
+    else
+        let hls=@/
+        s/^/--/
+        let @/=hls
+    endif
+endfunction
+
+map <C-k> :call HaskellComment()<CR>
