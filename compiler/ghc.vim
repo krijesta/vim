@@ -166,8 +166,11 @@ function! GHC_HaveTypes()
   endif
 endfunction
 
+"
+" JNS 31/10 - GHC_BrowseAll takes too long when working on Gtk2hs
+"
 " update b:ghc_types after successful make
-au QuickFixCmdPost make if GHC_CountErrors()==0 | silent call GHC_BrowseAll() | endif
+"au QuickFixCmdPost make if GHC_CountErrors()==0 | silent call GHC_BrowseAll() | endif
 
 " count only error entries in quickfix list, ignoring warnings
 function! GHC_CountErrors()
