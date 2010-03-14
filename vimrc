@@ -41,6 +41,12 @@ set guifont=Monospace\ 15
 exe "source ~/.vim/themes/enable16colors.vim"
 exe "source ~/.vim/themes/jake.vim"
 
+" Windows
+if has("win32") || has("win64")
+    set rtp+=~/.vim
+    set guifont=DejaVu_Sans_Mono:h14:cANSI
+endif
+
 " HTML
 au Bufenter *.html setlocal tabstop=2
 au Bufenter *.html setlocal shiftwidth=2
