@@ -45,6 +45,10 @@ exe "source ~/.vim/themes/jake.vim"
 au Bufenter *.html setlocal tabstop=2
 au Bufenter *.html setlocal shiftwidth=2
 
+" Ruby
+au Bufenter *.rb setlocal tabstop=2
+au Bufenter *.rb setlocal shiftwidth=2
+
 " Haskell
 au Bufenter *.hs compiler ghc
 au Bufenter *.hs setlocal tabstop=2
