@@ -43,9 +43,13 @@ exe "source ~/.vim/themes/jake.vim"
 
 " Windows
 if has("win32") || has("win64")
-    set rtp+=~/.vim
-    set guifont=DejaVu_Sans_Mono:h14:cANSI
+  set rtp+=~/.vim
+  set guifont=DejaVu_Sans_Mono:h14:cANSI
 endif
+
+" Vim
+au Bufenter *.vim,*vimrc setlocal tabstop=2
+au Bufenter *.vim,*vimrc setlocal shiftwidth=2
 
 " HTML
 au Bufenter *.html setlocal tabstop=2
@@ -63,20 +67,20 @@ let g:haddock_browser = "firefox-3.5"
 let g:haddock_indexfiledir = expand("~/.vim/cache/")
 
 if !filewritable(g:haddock_indexfiledir)
-    echoerr g:haddock_indexfiledir . " is not writable"
-    finish
+  echoerr g:haddock_indexfiledir . " is not writable"
+  finish
 end
 
 function! HaskellComment()
-    if getline(".") =~ '--'
-        let hls=@/
-        s/^--//
-        let @/=hls
-    else
-        let hls=@/
-        s/^/--/
-        let @/=hls
-    endif
+  if getline(".") =~ '--'
+    let hls=@/
+    s/^--//
+    let @/=hls
+  else
+    let hls=@/
+    s/^/--/
+    let @/=hls
+  endif
 endfunction
 
 map <C-k> :call HaskellComment()<CR>
