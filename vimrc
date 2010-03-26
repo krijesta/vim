@@ -59,6 +59,10 @@ au Bufenter *.html setlocal shiftwidth=2
 au Bufenter *.rb setlocal tabstop=2
 au Bufenter *.rb setlocal shiftwidth=2
 
+" Gitolite
+au BufNewFile,BufRead gitolite.conf,*/gitolite-admin/conf/* set filetype=gitolite
+au BufNewFile,BufRead {,.}gitolite.rc,example.gitolite.rc set filetype=perl
+
 " Haskell
 au Bufenter *.hs compiler ghc
 au Bufenter *.hs setlocal tabstop=2
