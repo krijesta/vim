@@ -104,12 +104,15 @@ if !exists('s:docdir') || !isdirectory(s:docdir)
   let location1b = s:ghc_libdir . '/doc/'
   let s:ghc_version = substitute(system(g:ghc . ' --numeric-version'),'\n','','')
   let location2 = '/usr/share/doc/ghc-' . s:ghc_version . '/html/' 
+  let location3 = '/usr/share/doc/ghc6-doc/html/'
   if isdirectory(location1a)
     let s:docdir = location1a
   elseif isdirectory(location1b)
     let s:docdir = location1b
   elseif isdirectory(location2)
     let s:docdir = location2
+  elseif isdirectory(location3)
+    let s:docdir = location3
   else " give up
     echoerr s:scriptname." can't find locaton of html documentation (set g:haddock_docdir)."
     finish
