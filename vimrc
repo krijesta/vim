@@ -67,7 +67,7 @@ au BufNewFile,BufRead {,.}gitolite.rc,example.gitolite.rc set filetype=perl
 au Bufenter *.hs compiler ghc
 au Bufenter *.hs setlocal tabstop=2
 au Bufenter *.hs setlocal shiftwidth=2
-let g:haddock_browser = "firefox-3.5"
+let g:haddock_browser = "google-chrome"
 let g:haddock_indexfiledir = expand("~/.vim/cache/")
 
 if !filewritable(g:haddock_indexfiledir)
