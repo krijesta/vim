@@ -78,3 +78,4 @@ hi def link gitoliteInclude		Include
 hi def link gitoliteString		String
 
 let b:current_syntax = "gitolite"
+
