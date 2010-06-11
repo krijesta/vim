@@ -59,6 +59,9 @@ au Bufenter *.html setlocal shiftwidth=2
 au Bufenter *.rb setlocal tabstop=2
 au Bufenter *.rb setlocal shiftwidth=2
 
+" Object J
+au BufNewFile,BufRead *.j setf objj
+
 " Haskell
 au Bufenter *.hs,*.hsc,*.lhs compiler ghc
 au Bufenter *.hs,*.hsc,*.lhs setlocal tabstop=4

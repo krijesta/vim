@@ -20,6 +20,7 @@ hi VisualNOS guifg=#004FB5 guibg=fg gui=reverse,underline ctermfg=darkblue  cter
 hi Todo      guifg=#d14a14 guibg=#1248d1                  ctermfg=red       ctermbg=darkblue
 hi Search    guifg=#90fff0 guibg=#2050d0                  ctermfg=white     ctermbg=darkblue cterm=underline term=underline
 hi IncSearch guifg=#b0ffff guibg=#2050d0                  ctermfg=darkblue  ctermbg=gray
+hi MatchParen guifg=#ec1f75 guibg=#170337 gui=bold
 
 hi Comment    guifg=#808080          ctermfg=darkgray cterm=none
 hi Constant   guifg=#ef4848          ctermfg=lightred cterm=none
@@ -52,10 +53,10 @@ hi Folded     guifg=#808080 guibg=#000040 ctermfg=darkgrey ctermbg=black cterm=b
 hi FoldColumn guifg=#808080 guibg=#000040 ctermfg=darkgrey ctermbg=black cterm=bold term=bold
 hi LineNr     guifg=#90f020               ctermfg=green                  cterm=none
 
-hi DiffAdd               guibg=darkblue                        ctermbg=darkblue cterm=none term=none
-hi DiffChange            guibg=darkmagenta                     ctermbg=magenta  cterm=none
-hi DiffDelete guifg=Blue guibg=DarkCyan gui=bold  ctermfg=blue ctermbg=cyan
-hi DiffText              guibg=Red      gui=bold               ctermbg=red      cterm=bold
+hi DiffText   gui=bold guibg=#442266
+hi DiffAdd    guibg=#000055
+hi DiffChange guibg=#220044
+hi DiffDelete gui=bold guifg=#604060 guibg=#302030
 
 hi Cursor  guifg=#000020 guibg=#ffaf38 ctermfg=bg ctermbg=brown
 hi lCursor guifg=#ffffff guibg=#000000 ctermfg=bg ctermbg=darkgreen
