@@ -1,6 +1,6 @@
-" Jacob's Vim Theme 
+" Jake's Vim Theme 
 " ------------------
-" Filename: jacob.vim
+" Filename: jake.vim
 " Author:   Jacob Stanley
 " Contents: Colours and Fonts
 
@@ -11,7 +11,7 @@ if exists("syntax_on")
   syntax reset
 endif
 
-let colors_name = "jacob"
+let colors_name = "jake"
 
 hi Normal    guifg=#c0c0c0 guibg=#000030                  ctermfg=gray      ctermbg=black
 hi ErrorMsg  guifg=#ffffff guibg=#287eff                  ctermfg=white     ctermbg=lightblue
@@ -28,7 +28,7 @@ hi Special    guifg=orange  gui=none ctermfg=brown    cterm=none
 hi Identifier guifg=#1e79db          ctermfg=blue     cterm=none
 hi Statement  guifg=#e3c22d gui=none ctermfg=yellow   cterm=none 
 hi PreProc    guifg=#c44db7 gui=none ctermfg=magenta  cterm=none
-hi type       guifg=#78d520 gui=none ctermfg=green    cterm=none
+hi Type       guifg=#78d520 gui=none ctermfg=green    cterm=none
 hi Underlined                                         cterm=underline term=underline
 hi Ignore     guifg=bg               ctermfg=bg
 

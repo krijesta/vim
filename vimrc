@@ -38,8 +38,8 @@ set foldmethod=marker
 " Font and color scheme
 syntax on
 set guifont=Monospace\ 15
-exe "source ~/.vim/themes/enable16colors.vim"
-exe "source ~/.vim/themes/jake.vim"
+exe "source ~/.vim/enable16colors.vim"
+colorscheme jellybeans
 
 " Windows
 if has("win32") || has("win64")
@@ -51,6 +51,10 @@ endif
 au Bufenter *.vim,*vimrc setlocal tabstop=2
 au Bufenter *.vim,*vimrc setlocal shiftwidth=2
 
+" Gitolite
+au BufNewFile,BufRead gitolite.conf,*/gitolite-admin/conf/* setf gitolite
+au BufNewFile,BufRead {,.}gitolite.rc,example.gitolite.rc setf perl
+
 " HTML
 au Bufenter *.html setlocal tabstop=2
 au Bufenter *.html setlocal shiftwidth=2
@@ -61,11 +65,16 @@ au Bufenter *.rb setlocal shiftwidth=2
 
 " Object J
 au BufNewFile,BufRead *.j setf objj
+au BufNewFile,BufRead *.sj setf javascript
 
 " Haskell
+au BufNewFile,BufRead *.hs,*.hsc,*.lhs setf haskell
+au BufNewFile,BufRead *.cabal setf cabal
 au Bufenter *.hs,*.hsc,*.lhs compiler ghc
 au Bufenter *.hs,*.hsc,*.lhs setlocal tabstop=4
 au Bufenter *.hs,*.hsc,*.lhs setlocal shiftwidth=4
+let hs_highlight_types = 1
+let hs_highlight_boolean = 1
 let g:haddock_browser = "google-chrome"
 let g:haddock_indexfiledir = expand("~/.vim/cache/")
 
