@@ -25,6 +25,7 @@ set hidden " don't discard buffer when switching away
 " Make
 :nnoremap <F5> :w<CR> :!runhaskell <C-R>=expand("%:t")<CR><CR>
 :nnoremap <F6> :w<CR> :make<CR>
+:nnoremap <F7> :w<CR> :HLint<CR>
 
 " Code indenting and formatting
 filetype plugin on
@@ -77,6 +78,17 @@ let hs_highlight_types = 1
 let hs_highlight_boolean = 1
 let g:haddock_browser = "google-chrome"
 let g:haddock_indexfiledir = expand("~/.vim/cache/")
+
+command! HLint :call HLint()
+
+function! HLint()
+  try
+    compiler hlint
+    make
+  finally
+    compiler ghc
+  endtry
+endfunction
 
 if !filewritable(g:haddock_indexfiledir)
   echoerr g:haddock_indexfiledir . " is not writable"
