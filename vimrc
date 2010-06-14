@@ -86,8 +86,6 @@ au Bufenter *.hs,*.hsc,*.lhs setlocal tabstop=4
 au Bufenter *.hs,*.hsc,*.lhs setlocal shiftwidth=4
 let hs_highlight_types = 1
 let hs_highlight_boolean = 1
-let g:haddock_browser = "google-chrome"
-let g:haddock_indexfiledir = expand("~/.vim/cache/")
 
 command! HLint :call HLint()
 
@@ -99,11 +97,6 @@ function! HLint()
     compiler ghc
   endtry
 endfunction
-
-if !filewritable(g:haddock_indexfiledir)
-  echoerr g:haddock_indexfiledir . " is not writable"
-  finish
-end
 
 function! HaskellComment()
   if getline(".") =~ '--'
