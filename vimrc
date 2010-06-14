@@ -36,15 +36,24 @@ set shiftwidth=4
 set expandtab
 set foldmethod=marker
 
+" Compatibility with different operating systems
+function! Load(relative_path)
+  if has("win32") || has("win64")
+    exec "source ~/vimfiles/" . a:relative_path
+  else
+    exec "source ~/.vim/" . a:relative_path
+  endif
+endfunction
+
+
 " Font and color scheme
 syntax on
 set guifont=Monospace\ 15
-exe "source ~/.vim/enable16colors.vim"
+call Load("enable16colors.vim")
 colorscheme jellybeans
 
 " Windows
 if has("win32") || has("win64")
-  set rtp+=~/.vim
   set guifont=DejaVu_Sans_Mono:h14:cANSI
 endif
 
