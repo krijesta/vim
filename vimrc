@@ -27,6 +27,9 @@ set hidden " don't discard buffer when switching away
 :nnoremap <F6> :w<CR> :make<CR>
 :nnoremap <F7> :w<CR> :HLint<CR>
 
+" NERDTree
+:nnoremap <F2> :NERDTreeToggle<CR>
+
 " Code indenting and formatting
 filetype plugin on
 filetype indent on
