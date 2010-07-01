@@ -6,6 +6,7 @@ set history=50                 " keep 50 lines of command history
 set ruler                      " show cursor position
 set showcmd                    " display incomplete commands
 set incsearch                  " do incremental searching
+let mapleader=','
 
 " Search highlighting toggle
 nnoremap <F11> :set hlsearch! hlsearch?<CR>
