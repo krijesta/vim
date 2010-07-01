@@ -8,9 +8,10 @@ set showcmd                    " display incomplete commands
 set incsearch                  " do incremental searching
 
 " Search highlighting toggle
+nnoremap <F11> :set hlsearch! hlsearch?<CR>
 nnoremap <F10> :set hls<CR>:exec "let @/='\\<".expand("<cword>")."\\>'"<CR>
-nnoremap <F11> :nohls<CR>
-set hls " search highlighting on by default
+nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
+set nohls " search highlighting on by default
 
 " Cycling through buffers
 nnoremap <A-Right> :bnext<CR>
