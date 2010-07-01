@@ -15,7 +15,10 @@ set nohls " search highlighting on by default
 
 " Cycling through buffers
 nnoremap <A-Right> :bnext<CR>
-nnoremap <A-Left> :bprevious<CR>
+nnoremap <A-Left>  :bprevious<CR>
+nnoremap <C-j> :bnext<CR>
+nnoremap <C-k> :bprevious<CR>
+nmap     <C-l> <Plug>Kwbd
 set hidden " don't discard buffer when switching away
 
 " make tabs show complete (no broken on two lines)
@@ -121,4 +124,4 @@ function! HaskellComment()
   endif
 endfunction
 
-map <C-k> :call HaskellComment()<CR>
+"map <C-k> :call HaskellComment()<CR>
