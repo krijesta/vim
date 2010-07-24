@@ -44,17 +44,17 @@ syn match   CfgMultiValues    "^ .*" contains=CfgDirectory,UncPath,CfgString,Cfg
 syn match CfgExtendSection "^<=.*"
 
 " Sections
-syn match CfgSection        "^\[.*\]"
-syn match CfgSection        "^{.*}"
+syn match CfgSection    "^\[.*\]"
+syn match CfgSection    "^{.*}"
 
 " String
-syn match  CfgString    "\".*\"" contained
-syn match  CfgString    "'.*'"   contained
+syn match CfgString    "\".*\"" contained
+syn match CfgString    "'.*'"   contained
 
 " Comments (Everything before '#' or '//' or ';')
-syn match  CfgComment   "^#.*" contains=@Spell
-syn match  CfgComment   ";.*" contains=@Spell
-syn match  CfgComment   "\/\/.*" contains=@Spell
+syn match CfgComment   "^#.*" contains=@Spell
+syn match CfgComment   ";.*" contains=@Spell
+syn match CfgComment   "\/\/.*" contains=@Spell
 
 " Define the default hightlighting.
 " For version 5.7 and earlier: only when not done already
