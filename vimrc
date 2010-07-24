@@ -50,6 +50,7 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set foldmethod=marker
+set number
 
 " Compatibility with different operating systems
 function! Load(relative_path)
