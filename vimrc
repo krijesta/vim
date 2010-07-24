@@ -84,6 +84,10 @@ au BufNewFile,BufRead {,.}gitolite.rc,example.gitolite.rc setf perl
 au Bufenter *.html setlocal tabstop=2
 au Bufenter *.html setlocal shiftwidth=2
 
+" Markdown
+au BufNewFile,BufRead *.mkd,*.md setf mkd
+au BufRead *.mkd,*.md set ai formatoptions=tcroqn2 comments=n:&gt;
+
 " Ruby
 au BufNewFile,BufRead *.rb,*.ru set filetype=ruby
 au Bufenter *.rb setlocal tabstop=2
