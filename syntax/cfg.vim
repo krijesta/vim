@@ -22,7 +22,7 @@ endif
 
 " case off
 syn case ignore
-syn keyword CfgOnOff  ON OFF YES NO TRUE FALSE  contained
+syn keyword CfgOnOff ON OFF YES NO TRUE FALSE ENABLED DISABLED contained
 syn match UncPath "\\\\\p*" contained
 "Dos Drive:\Path
 syn match CfgDirectory "[a-zA-Z]:\\\p*" contained
