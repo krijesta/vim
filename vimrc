@@ -78,15 +78,15 @@ au Bufenter *.vim,*vimrc setlocal tabstop=2
 au Bufenter *.vim,*vimrc setlocal shiftwidth=2
 
 " Gitolite
-au BufNewFile,BufRead gitolite.conf,*/gitolite-admin/conf/* setf gitolite
-au BufNewFile,BufRead {,.}gitolite.rc,example.gitolite.rc setf perl
+au BufNewFile,BufRead gitolite.conf,*/gitolite-admin/conf/* set filetype=gitolite
+au BufNewFile,BufRead {,.}gitolite.rc,example.gitolite.rc set filetype=perl
 
 " HTML
 au Bufenter *.html setlocal tabstop=2
 au Bufenter *.html setlocal shiftwidth=2
 
 " Markdown
-au BufNewFile,BufRead *.mkd,*.md setf mkd
+au BufNewFile,BufRead *.mkd,*.md set filetype=mkd
 au BufRead *.mkd,*.md set ai formatoptions=tcroqn2 comments=n:&gt;
 
 " Ruby
@@ -95,12 +95,12 @@ au Bufenter *.rb setlocal tabstop=2
 au Bufenter *.rb setlocal shiftwidth=2
 
 " Object J
-au BufNewFile,BufRead *.j setf objj
-au BufNewFile,BufRead *.sj setf javascript
+au BufNewFile,BufRead *.j set filetype=objj
+au BufNewFile,BufRead *.sj set filetype=javascript
 
 " Haskell
-au BufNewFile,BufRead *.hs,*.hsc,*.lhs setf haskell
-au BufNewFile,BufRead *.cabal setf cabal
+au BufNewFile,BufRead *.hs,*.hsc,*.lhs set filetype=haskell
+au BufNewFile,BufRead *.cabal set filetype=cabal
 au Bufenter *.hs,*.hsc,*.lhs compiler ghc
 au Bufenter *.hs,*.hsc,*.lhs setlocal tabstop=4
 au Bufenter *.hs,*.hsc,*.lhs setlocal shiftwidth=4
