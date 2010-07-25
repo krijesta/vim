@@ -64,13 +64,14 @@ endfunction
 
 " Font and color scheme
 syntax on
-set guifont=Monospace\ 15
 call Load("enable16colors.vim")
 colorscheme jellybeans
 
 " Windows
 if has("win32") || has("win64")
   set guifont=DejaVu_Sans_Mono:h14:cANSI
+else
+  set guifont=Monospace\ 15
 endif
 
 " Vim
