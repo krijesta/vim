@@ -99,6 +99,9 @@ au Bufenter *.rb setlocal shiftwidth=2
 au BufNewFile,BufRead *.j set filetype=objj
 au BufNewFile,BufRead *.sj set filetype=javascript
 
+" F#
+au BufNewFile,BufRead *.fs set filetype=fs
+
 " Haskell
 au BufNewFile,BufRead *.hs,*.hsc,*.lhs set filetype=haskell
 au BufNewFile,BufRead *.cabal set filetype=cabal
