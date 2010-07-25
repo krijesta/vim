@@ -35,7 +35,7 @@ let g:miniBufExplUseSingleClick = 1
 :nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
 
 " Make
-:nnoremap <F5> :w<CR> :!runhaskell <C-R>=expand("%:t")<CR><CR>
+:nnoremap <F5> :w<CR> :!runhaskell <C-R>=expand("%:p")<CR><CR>
 :nnoremap <F6> :w<CR> :make<CR>
 :nnoremap <F7> :w<CR> :HLint<CR>
 
