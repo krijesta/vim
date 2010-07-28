@@ -110,6 +110,9 @@ au FileType ruby let g:rubycomplete_include_objectspace = 1
 au BufNewFile,BufRead *.j set filetype=objj
 au BufNewFile,BufRead *.sj set filetype=javascript
 
+" C#
+au FileType cs setlocal noexpandtab
+
 " F#
 au BufNewFile,BufRead *.fs set filetype=fs
 
