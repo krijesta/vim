@@ -99,8 +99,12 @@ au BufRead *.mkd,*.md set ai formatoptions=tcroqn2 comments=n:&gt;
 
 " Ruby
 au BufNewFile,BufRead *.rb,*.ru set filetype=ruby
-au Bufenter *.rb setlocal tabstop=2
-au Bufenter *.rb setlocal shiftwidth=2
+au FileType ruby setlocal tabstop=2
+au FileType ruby setlocal shiftwidth=2
+au FileType ruby let g:rubycomplete_buffer_loading = 1
+au FileType ruby let g:rubycomplete_classes_in_global = 1
+"au FileType ruby let g:rubycomplete_include_object = 1
+"au FileType ruby let g:rubycomplete_include_objectspace = 1
 
 " Object J
 au BufNewFile,BufRead *.j set filetype=objj
