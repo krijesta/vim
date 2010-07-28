@@ -103,8 +103,8 @@ au FileType ruby setlocal tabstop=2
 au FileType ruby setlocal shiftwidth=2
 au FileType ruby let g:rubycomplete_buffer_loading = 1
 au FileType ruby let g:rubycomplete_classes_in_global = 1
-"au FileType ruby let g:rubycomplete_include_object = 1
-"au FileType ruby let g:rubycomplete_include_objectspace = 1
+au FileType ruby let g:rubycomplete_include_object = 1
+au FileType ruby let g:rubycomplete_include_objectspace = 1
 
 " Object J
 au BufNewFile,BufRead *.j set filetype=objj
