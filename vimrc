@@ -118,12 +118,16 @@ au BufNewFile,BufRead *.fs set filetype=fs
 
 " Haskell
 au BufNewFile,BufRead *.hs,*.hsc,*.lhs set filetype=haskell
-au BufNewFile,BufRead *.cabal set filetype=cabal
-au Bufenter *.hs,*.hsc,*.lhs compiler ghc
-au Bufenter *.hs,*.hsc,*.lhs setlocal tabstop=4
-au Bufenter *.hs,*.hsc,*.lhs setlocal shiftwidth=4
+au FileType haskell compiler ghc
+au FileType haskell setlocal tabstop=4
+au FileType haskell setlocal shiftwidth=4
 let hs_highlight_types = 1
 let hs_highlight_boolean = 1
+
+" Haskell Cabal
+au BufNewFile,BufRead *.cabal set filetype=cabal
+au FileType cabal setlocal tabstop=2
+au FileType cabal setlocal shiftwidth=2
 
 command! HLint :call HLint()
 
