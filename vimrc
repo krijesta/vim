@@ -8,13 +8,6 @@ set showcmd                    " display incomplete commands
 set incsearch                  " do incremental searching
 let mapleader=','
 
-" Make yank/paste use the clipboard register by default
-set clipboard=unnamed
-
-" Copy/paste from system
-"vmap <A-c> "*y
-"map <A-v> <Esc>"*p
-
 " Search highlighting toggle
 nnoremap <F11> :set hlsearch! hlsearch?<CR>
 nnoremap <A-S-F11> :set hls<CR>:exec "let @/='\\<".expand("<cword>")."\\>'"<CR>
