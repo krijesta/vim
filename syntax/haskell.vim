@@ -191,7 +191,7 @@ syn region	cIncluded	display contained start=+"+ skip=+\\\\\|\\"+ end=+"+
 syn match	cIncluded	display contained "<[^>]*>"
 syn match	cInclude	display "^\s*\(%:\|#\)\s*include\>\s*["<]" contains=cIncluded
 syn cluster	cPreProcGroup	contains=cPreCondit,cIncluded,cInclude,cDefine,cCppOut,cCppOut2,cCppSkip,cCommentStartError
-syn region	cDefine		matchgroup=cPreCondit start="^\s*\(%:\|#\)\s*\(define\|let\|undef\)\>" skip="\\$" end="$"
+syn region	cDefine		matchgroup=cPreCondit start="^\s*\(%:\|#\)\s*\(define\|{enum\|let\|undef\)\>" skip="\\$" end="$"
 syn region	cPreProc	matchgroup=cPreCondit start="^\s*\(%:\|#\)\s*\(pragma\>\|line\>\|warning\>\|warn\>\|error\>\)" skip="\\$" end="$" keepend
 
 syn region	cComment	matchgroup=cCommentStart start="/\*" end="\*/" contains=cCommentStartError,cSpaceError contained
