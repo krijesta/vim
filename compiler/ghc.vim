@@ -43,10 +43,10 @@ setlocal errorformat=
                     \%-Z\ %#,
                     \%W%f:%l:%c:\ Warning:\ %m,
                     \%E%f:%l:%c:\ %m,
-                    \%E%>%f:%l:%c:,
-                    \%+C\ \ %#%m,
                     \%W%>%f:%l:%c:,
                     \%+C\ \ %#%tarning:\ %m,
+                    \%E%>%f:%l:%c:,
+                    \%+C\ \ %#%m,
 
 " oh, wouldn't you guess it - ghc reports (partially) to stderr..
 setlocal shellpipe=2>
