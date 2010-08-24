@@ -6,7 +6,10 @@ set history=50                 " keep 50 lines of command history
 set ruler                      " show cursor position
 set showcmd                    " display incomplete commands
 set incsearch                  " do incremental searching
-let mapleader=','
+set lines=24 columns=85
+
+command! W :w " allow saving via :W
+let mapleader = ","
 
 " Search highlighting toggle
 nnoremap <F11> :set hlsearch! hlsearch?<CR>
@@ -19,7 +22,7 @@ nnoremap <A-Right> :bnext<CR>
 nnoremap <A-Left>  :bprevious<CR>
 nnoremap <C-j> :bnext<CR>
 nnoremap <C-k> :bprevious<CR>
-nmap     <C-l> <Plug>Kwbd
+nmap     <C-l> :Bclose<CR>
 set hidden " don't discard buffer when switching away
 
 " make tabs show complete (no broken on two lines)
@@ -39,8 +42,9 @@ let g:miniBufExplUseSingleClick = 1
 :nnoremap <F6> :w<CR> :make<CR>
 :nnoremap <F7> :w<CR> :HLint<CR>
 
-" NERDTree
-:nnoremap <F2> :NERDTreeToggle<CR>
+" Files & Tags
+nnoremap <F2> :NERDTreeToggle<CR>
+nnoremap <F3> :TlistToggle<CR>
 
 " Code indenting and formatting
 filetype plugin on
@@ -50,7 +54,9 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set foldmethod=marker
-set number
+
+" Ctags
+set tags=tags;/
 
 " Compatibility with different operating systems
 function! Load(relative_path)
@@ -61,22 +67,29 @@ function! Load(relative_path)
   endif
 endfunction
 
-
-" Font and color scheme
-syntax on
-call Load("enable16colors.vim")
-colorscheme jellybeans
-
-" Windows
+" Font
 if has("win32") || has("win64")
   set guifont=DejaVu_Sans_Mono:h14:cANSI
 else
   set guifont=Monospace\ 15
 endif
 
+" Color scheme
+syntax on
+call Load("enable16colors.vim")
+colorscheme jellybeans
+set number
+set numberwidth=5
+
 " Vim
 au Bufenter *.vim,*vimrc setlocal tabstop=2
 au Bufenter *.vim,*vimrc setlocal shiftwidth=2
+
+" CDL
+au BufNewFile,BufRead *.cdl set filetype=c
+au BufNewFile,BufRead *.cdl set noautoindent
+au BufNewFile,BufRead *.cdl set nosmartindent
+au BufNewFile,BufRead *.cdl set nocindent
 
 " Gitolite
 au BufNewFile,BufRead gitolite.conf,*/gitolite-admin/conf/* set filetype=gitolite
@@ -85,6 +98,18 @@ au BufNewFile,BufRead {,.}gitolite.rc,example.gitolite.rc set filetype=perl
 " HTML
 au Bufenter *.html setlocal tabstop=2
 au Bufenter *.html setlocal shiftwidth=2
+
+" C#
+au FileType cs setlocal tabstop=4
+au FileType cs setlocal shiftwidth=4
+au FileType cs setlocal noexpandtab
+au FileType cs compiler msbuild
+au FileType cs let b:ws_show=1
+au FileType cs let b:ws_flags='eist'
+au FileType cs call RefreshWhitespace()
+
+" Visual Studio Settings
+au BufNewFile,BufRead *.vssettings set filetype=xml
 
 " Markdown
 au BufNewFile,BufRead *.mkd,*.md set filetype=mkd
@@ -122,8 +147,6 @@ au BufNewFile,BufRead *.cabal set filetype=cabal
 au FileType cabal setlocal tabstop=2
 au FileType cabal setlocal shiftwidth=2
 
-command! HLint :call HLint()
-
 function! HLint()
   try
     compiler hlint
@@ -133,16 +156,19 @@ function! HLint()
   endtry
 endfunction
 
-function! HaskellComment()
-  if getline(".") =~ '--'
-    let hls=@/
-    s/^--//
-    let @/=hls
-  else
-    let hls=@/
-    s/^/--/
-    let @/=hls
-  endif
+command! HLint :call HLint()
+
+function! s:RunShellCommand(cmdline)
+  botright new
+  setlocal buftype=nofile bufhidden=wipe nobuflisted noswapfile nowrap
+  call setline(1,a:cmdline)
+  call setline(2,substitute(a:cmdline,'.','=','g'))
+  execute 'silent $read !'.escape(a:cmdline,'%#')
+  setlocal nomodifiable
+  1
 endfunction
 
-"map <C-k> :call HaskellComment()<CR>
+command! -complete=file -nargs=+ Run call s:RunShellCommand(<q-args>)
+
+" Other scripts
+call Load("whitespace.vim")
