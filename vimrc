@@ -134,6 +134,9 @@ au FileType cs setlocal noexpandtab
 " F#
 au BufNewFile,BufRead *.fs set filetype=fs
 
+" GML
+au BufNewFile,BufRead *.gml set filetype=config
+
 " Haskell
 au BufNewFile,BufRead *.hs,*.hsc,*.lhs set filetype=haskell
 au FileType haskell compiler ghc
