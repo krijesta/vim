@@ -139,6 +139,7 @@ au BufNewFile,BufRead *.gml set filetype=config
 
 " Haskell
 au BufNewFile,BufRead *.hs,*.hsc,*.lhs set filetype=haskell
+au BufNewFile,BufRead *.lhs set syntax=lhaskell
 au FileType haskell compiler ghc
 au FileType haskell setlocal tabstop=4
 au FileType haskell setlocal shiftwidth=4
