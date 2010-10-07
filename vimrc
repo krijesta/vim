@@ -139,6 +139,9 @@ au BufNewFile,BufRead *.gml set filetype=config
 
 " Arduino
 au BufNewFile,BufRead *.pde set filetype=arduino
+au FileType arduino set autoindent
+au FileType arduino set smartindent
+au FileType arduino set cindent
 
 " Haskell
 au BufNewFile,BufRead *.hs,*.hsc,*.lhs set filetype=haskell
