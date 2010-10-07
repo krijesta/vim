@@ -137,6 +137,9 @@ au BufNewFile,BufRead *.fs set filetype=fs
 " GML
 au BufNewFile,BufRead *.gml set filetype=config
 
+" Arduino
+au BufNewFile,BufRead *.pde set filetype=arduino
+
 " Haskell
 au BufNewFile,BufRead *.hs,*.hsc,*.lhs set filetype=haskell
 au BufNewFile,BufRead *.lhs set syntax=lhaskell
