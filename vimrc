@@ -96,8 +96,12 @@ au BufNewFile,BufRead gitolite.conf,*/gitolite-admin/conf/* set filetype=gitolit
 au BufNewFile,BufRead {,.}gitolite.rc,example.gitolite.rc set filetype=perl
 
 " HTML
-au Bufenter *.html setlocal tabstop=2
-au Bufenter *.html setlocal shiftwidth=2
+au FileType html setlocal tabstop=2
+au FileType html setlocal shiftwidth=2
+
+" CSS
+au FileType css setlocal tabstop=2
+au FileType css setlocal shiftwidth=2
 
 " C#
 au FileType cs setlocal tabstop=4
