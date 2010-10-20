@@ -109,7 +109,7 @@ au FileType cs setlocal shiftwidth=4
 au FileType cs setlocal noexpandtab
 au FileType cs compiler msbuild
 au FileType cs let b:ws_show=1
-au FileType cs let b:ws_flags='eist'
+au FileType cs let b:ws_flags='est'
 au FileType cs call RefreshWhitespace()
 
 " Visual Studio Settings
