@@ -11,6 +11,11 @@ set lines=24 columns=85
 command! W :w " allow saving via :W
 let mapleader = ","
 
+" Swap current character with next
+:nnoremap <silent> gc xph
+" Swap current word with next
+:nnoremap <silent> gw "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><c-o><c-l>
+
 " Search highlighting toggle
 nnoremap <F11> :set hlsearch! hlsearch?<CR>
 nnoremap <A-S-F11> :set hls<CR>:exec "let @/='\\<".expand("<cword>")."\\>'"<CR>
