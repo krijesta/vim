@@ -127,7 +127,7 @@ au BufNewFile,BufRead *.mkd,*.md set filetype=mkd
 au BufRead *.mkd,*.md set ai formatoptions=tcroqn2 comments=n:&gt;
 
 " Ruby
-au BufNewFile,BufRead *.rb,*.ru set filetype=ruby
+au BufNewFile,BufRead *.rb,*.ru,rakefile,vagrantfile set filetype=ruby
 au FileType ruby setlocal tabstop=2
 au FileType ruby setlocal shiftwidth=2
 au FileType ruby let g:rubycomplete_buffer_loading = 1
