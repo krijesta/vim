@@ -174,6 +174,9 @@ au BufNewFile,BufRead *.cabal set filetype=cabal
 au FileType cabal setlocal tabstop=2
 au FileType cabal setlocal shiftwidth=2
 
+" Heist templates
+au BufNewFile,BufRead *.tpl set filetype=html
+
 function! HLint()
   try
     compiler hlint
