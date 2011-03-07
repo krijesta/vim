@@ -111,19 +111,19 @@ au BufNewFile,BufRead {,.}gitolite.rc,example.gitolite.rc set filetype=perl
 " HTML
 au FileType html setlocal tabstop=2
 au FileType html setlocal shiftwidth=2
+au FileType html call EnableWhitespace('et')
 
 " CSS
 au FileType css setlocal tabstop=2
 au FileType css setlocal shiftwidth=2
+au FileType css call EnableWhitespace('et')
 
 " C#
 au FileType cs setlocal tabstop=4
 au FileType cs setlocal shiftwidth=4
 au FileType cs setlocal noexpandtab
 au FileType cs compiler msbuild
-au FileType cs let b:ws_show=1
-au FileType cs let b:ws_flags='est'
-au FileType cs call RefreshWhitespace()
+au FileType cs call EnableWhitespace('es')
 
 " Visual Studio Settings
 au BufNewFile,BufRead *.vssettings set filetype=xml
@@ -140,6 +140,7 @@ au FileType ruby let g:rubycomplete_buffer_loading = 1
 au FileType ruby let g:rubycomplete_classes_in_global = 1
 au FileType ruby let g:rubycomplete_include_object = 1
 au FileType ruby let g:rubycomplete_include_objectspace = 1
+au FileType ruby call EnableWhitespace('et')
 
 " Object J
 au BufNewFile,BufRead *.j set filetype=objj
@@ -163,6 +164,7 @@ au BufNewFile,BufRead *.lhs set syntax=lhaskell
 au FileType haskell compiler ghc
 au FileType haskell setlocal tabstop=4
 au FileType haskell setlocal shiftwidth=4
+au FileType haskell call EnableWhitespace('et')
 let hs_highlight_types = 1
 let hs_highlight_boolean = 1
 
@@ -170,6 +172,7 @@ let hs_highlight_boolean = 1
 au BufNewFile,BufRead *.cabal set filetype=cabal
 au FileType cabal setlocal tabstop=2
 au FileType cabal setlocal shiftwidth=2
+au FileType cabal call EnableWhitespace('et')
 
 " Heist templates
 au BufNewFile,BufRead *.tpl set filetype=html
