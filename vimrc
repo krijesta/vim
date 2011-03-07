@@ -23,11 +23,17 @@ nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 set nohls " search highlighting on by default
 
 " Cycling through buffers
+nnoremap <A-D-Right> :bnext<CR>
+nnoremap <A-D-Left> :bprevious<CR>
+nnoremap <A-D-Down> :Bclose<CR>
 nnoremap <A-Right> :bnext<CR>
 nnoremap <A-Left>  :bprevious<CR>
 nnoremap <C-j> :bnext<CR>
 nnoremap <C-k> :bprevious<CR>
 nmap     <C-l> :Bclose<CR>
+nnoremap <D-j> :bnext<CR>
+nnoremap <D-k> :bprevious<CR>
+nnoremap <D-l> :Bclose<CR>
 set hidden " don't discard buffer when switching away
 
 " make tabs show complete (no broken on two lines)
