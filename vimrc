@@ -1,5 +1,6 @@
 set nocompatible " use vim settings (rather than vi)
 
+set hidden                     " don't discard buffer when switching away
 set backspace=indent,eol,start " allow backspace over everthing
 set nobackup                   " do not keep backup file
 set history=50                 " keep 50 lines of command history
@@ -11,10 +12,26 @@ set lines=24 columns=85
 command! W :w " allow saving via :W
 let mapleader = ","
 
+" Compatibility with different operating systems
+if has("win32") || has("win64")
+  let g:vimhome = "~/vimfiles/"
+else
+  let g:vimhome = "~/.vim/"
+endif
+let g:vimrc = g:vimhome . ".vimrc"
+
+" Edit .vimrc
+nmap <leader>v :tabedit vimrc<CR>
+
+" Source the vimrc file after saving it
+if has("autocmd")
+  autocmd! BufWritePost vimrc source vimrc
+endif
+
 " Swap current character with next
-:nnoremap <silent> gc xph
+nnoremap <silent> gc xph
 " Swap current word with next
-:nnoremap <silent> gw "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><c-o><c-l>
+nnoremap <silent> gw "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><c-o><c-l>
 
 " Search highlighting toggle
 nnoremap <F11> :set hlsearch! hlsearch?<CR>
@@ -23,18 +40,11 @@ nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 set nohls " search highlighting on by default
 
 " Cycling through buffers
-nnoremap <A-D-Right> :bnext<CR>
-nnoremap <A-D-Left> :bprevious<CR>
-nnoremap <A-D-Down> :Bclose<CR>
-nnoremap <A-Right> :bnext<CR>
-nnoremap <A-Left>  :bprevious<CR>
 nnoremap <C-j> :bnext<CR>
 nnoremap <C-k> :bprevious<CR>
-nmap     <C-l> :Bclose<CR>
-nnoremap <D-j> :bnext<CR>
-nnoremap <D-k> :bprevious<CR>
-nnoremap <D-l> :Bclose<CR>
-set hidden " don't discard buffer when switching away
+nnoremap <C-l> :Bclose<CR>
+nnoremap <D-j> :tabnext<CR>
+nnoremap <D-k> :tabprevious<CR>
 
 " Replace word under cursor
 " usage: type \s on "foo" and then type "bar/g" to
@@ -61,13 +71,8 @@ set foldmethod=marker
 " Ctags
 set tags=tags;/
 
-" Compatibility with different operating systems
 function! Load(relative_path)
-  if has("win32") || has("win64")
-    exec "source ~/vimfiles/" . a:relative_path
-  else
-    exec "source ~/.vim/" . a:relative_path
-  endif
+  exec "source " . g:vimhome . a:relative_path
 endfunction
 
 " Font
@@ -87,8 +92,8 @@ set number
 set numberwidth=5
 
 " Vim
-au Bufenter *.vim,*vimrc setlocal tabstop=2
-au Bufenter *.vim,*vimrc setlocal shiftwidth=2
+au FileType vim setlocal tabstop=2
+au FileType vim setlocal shiftwidth=2
 
 " CDL
 au BufNewFile,BufRead *.cdl set filetype=c
