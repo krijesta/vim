@@ -42,7 +42,7 @@ set nohls " search highlighting on by default
 " Cycling through buffers
 nnoremap <C-j> :bnext<CR>
 nnoremap <C-k> :bprevious<CR>
-nnoremap <C-l> :Bclose<CR>
+nnoremap <C-l> :bdelete<CR>
 nnoremap <D-j> :tabnext<CR>
 nnoremap <D-k> :tabprevious<CR>
 
