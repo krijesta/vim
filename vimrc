@@ -46,6 +46,12 @@ nnoremap <C-l> :bdelete<CR>
 nnoremap <D-j> :tabnext<CR>
 nnoremap <D-k> :tabprevious<CR>
 
+" Window resizing
+nnoremap <D-left>  :vertical resize -5<cr>
+nnoremap <D-down>  :resize +5<cr>
+nnoremap <D-up>    :resize -5<cr>
+nnoremap <D-right> :vertical resize +5<cr>
+
 " Replace word under cursor
 " usage: type \s on "foo" and then type "bar/g" to
 "        replace foo with bar
