@@ -14,18 +14,18 @@ let mapleader = ","
 
 " Compatibility with different operating systems
 if has("win32") || has("win64")
-  let g:vimhome = "~/vimfiles/"
+  let g:_vimdir = "~/vimfiles/"
 else
-  let g:vimhome = "~/.vim/"
+  let g:_vimdir = "~/.vim/"
 endif
-let g:vimrc = g:vimhome . ".vimrc"
+let g:_vimrc = g:_vimdir . ".vimrc"
 
 " Edit .vimrc
-nmap <leader>v :tabedit vimrc<CR>
+nmap <leader>v :tabedit g:_vimrc<CR>
 
 " Source the vimrc file after saving it
 if has("autocmd")
-  autocmd! BufWritePost vimrc source vimrc
+  autocmd! BufWritePost g:_vimrc source g:_vimrc
 endif
 
 " Swap current character with next
@@ -81,7 +81,7 @@ vmap <Leader>a: :Tabularize /:\zs<CR>
 set tags=tags;/
 
 function! Load(relative_path)
-  exec "source " . g:vimhome . a:relative_path
+  exec "source " . g:_vimdir . a:relative_path
 endfunction
 
 " Font
