@@ -49,12 +49,12 @@ nnoremap <D-k> :tabprevious<CR>
 " Replace word under cursor
 " usage: type \s on "foo" and then type "bar/g" to
 "        replace foo with bar
-:nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
+nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
 
 " Make
-:nnoremap <F5> :w<CR> :!ghc -e main <C-R>=expand("%:p")<CR><CR>
-:nnoremap <F6> :w<CR> :make<CR>
-:nnoremap <F7> :w<CR> :HLint<CR>
+nnoremap <F5> :w<CR> :!ghc -e main <C-R>=expand("%:p")<CR><CR>
+nnoremap <F6> :w<CR> :make<CR>
+nnoremap <F7> :w<CR> :HLint<CR>
 
 " Files & Tags
 nnoremap <Leader>r :CommandTFlush<CR>
