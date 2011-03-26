@@ -169,6 +169,10 @@ au FileType cabal call EnableWhitespace('et')
 " Heist templates
 au BufNewFile,BufRead *.tpl set filetype=html
 
+" Alex lexer / Happy parser
+au BufNewFile,BufRead *.x set filetype=alex
+au BufNewFile,BufRead *.y set filetype=happy
+
 function! HLint()
   try
     compiler hlint
