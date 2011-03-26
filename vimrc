@@ -57,6 +57,7 @@ nnoremap <D-k> :tabprevious<CR>
 :nnoremap <F7> :w<CR> :HLint<CR>
 
 " Files & Tags
+nnoremap <Leader>r :CommandTFlush<CR>
 nnoremap <F3> :TlistToggle<CR>
 let g:netrw_liststyle    = 3 " Use tree-mode as default view
 let g:netrw_browse_split = 4 " Open file in previous buffer
