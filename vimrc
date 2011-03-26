@@ -54,7 +54,6 @@ let g:miniBufExplUseSingleClick = 1
 :nnoremap <F7> :w<CR> :HLint<CR>
 
 " Files & Tags
-nnoremap <F2> :NERDTreeToggle<CR>
 nnoremap <F3> :TlistToggle<CR>
 
 " Code indenting and formatting
