@@ -113,9 +113,9 @@ au FileType css call EnableWhitespace('et')
 " C#
 au FileType cs setlocal tabstop=4
 au FileType cs setlocal shiftwidth=4
-au FileType cs setlocal noexpandtab
+au FileType cs setlocal expandtab
 au FileType cs compiler msbuild
-au FileType cs call EnableWhitespace('es')
+au FileType cs call EnableWhitespace('et')
 
 " Visual Studio Settings
 au BufNewFile,BufRead *.vssettings set filetype=xml
