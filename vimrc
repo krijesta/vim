@@ -194,6 +194,8 @@ au BufNewFile,BufRead *.tpl set filetype=html
 
 " Alex lexer / Happy parser
 au BufNewFile,BufRead *.x set filetype=alex
+au FileType alex compiler ghc
+au FileType alex setlocal makeprg=alex\ %\ &&\ ghc\ -e\ :q\ %:r.hs
 au BufNewFile,BufRead *.y set filetype=happy
 
 function! HLint()
