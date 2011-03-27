@@ -8,7 +8,6 @@ set ruler                      " show cursor position
 set showcmd                    " display incomplete commands
 set incsearch                  " do incremental searching
 set autowrite                  " auto-save buffer on :make
-"set lines=24 columns=85
 
 command! W :w " allow saving via :W
 let mapleader = ","
