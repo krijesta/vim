@@ -116,6 +116,9 @@ set numberwidth=5
 au FileType vim setlocal tabstop=2
 au FileType vim setlocal shiftwidth=2
 
+" ANTLR
+au BufNewFile,BufRead *.g set syntax=antlr
+
 " CDL
 au BufNewFile,BufRead *.cdl set filetype=c
 au BufNewFile,BufRead *.cdl set noautoindent
