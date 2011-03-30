@@ -197,6 +197,7 @@ au BufNewFile,BufRead *.tpl set filetype=html
 au BufNewFile,BufRead *.x set filetype=alex
 au FileType alex compiler ghc
 au FileType alex setlocal makeprg=alex\ %\ &&\ ghc\ -e\ :q\ %:r.hs
+au FileType alex call EnableWhitespace('et')
 au BufNewFile,BufRead *.y set filetype=happy
 
 function! HLint()
