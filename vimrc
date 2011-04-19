@@ -33,10 +33,12 @@ nnoremap <silent> gc xph
 " Swap current word with next
 nnoremap <silent> gw "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><c-o><c-l>
 
+" Run j macro
+nnoremap <Space> @j
+
 " Search highlighting toggle
 nnoremap <F11> :set hlsearch! hlsearch?<CR>
 nnoremap <A-S-F11> :set hls<CR>:exec "let @/='\\<".expand("<cword>")."\\>'"<CR>
-nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 set nohls " search highlighting on by default
 
 " Cycling through buffers
