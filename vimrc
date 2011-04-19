@@ -45,6 +45,7 @@ set nohls " search highlighting on by default
 nnoremap <C-j> :bnext<CR>
 nnoremap <C-k> :bprevious<CR>
 nnoremap <C-l> :bdelete<CR>
+nnoremap <C-h> :b#<CR>
 nnoremap <D-j> :tabnext<CR>
 nnoremap <D-k> :tabprevious<CR>
 
