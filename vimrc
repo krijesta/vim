@@ -69,9 +69,6 @@ nnoremap <F7> :w<CR> :HLint<CR>
 nnoremap <Leader>r :CommandTFlush<CR>
 nnoremap <F3> :TlistToggle<CR>
 set wildignore=*.o,*.hi,*.p_o,*.p_hi,dist
-let g:netrw_liststyle    = 3 " Use tree-mode as default view
-let g:netrw_browse_split = 4 " Open file in previous buffer
-let g:netrw_preview      = 0 " preview window shown in a vertically split
 
 " Code indenting and formatting
 filetype plugin on
