@@ -135,6 +135,11 @@ au FileType html setlocal tabstop=2
 au FileType html setlocal shiftwidth=2
 au FileType html call EnableWhitespace('et')
 
+" XML
+au FileType xml setlocal tabstop=2
+au FileType xml setlocal shiftwidth=2
+au FileType xml call EnableWhitespace('et')
+
 " CSS
 au FileType css setlocal tabstop=2
 au FileType css setlocal shiftwidth=2
