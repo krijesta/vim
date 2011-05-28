@@ -41,6 +41,24 @@ nnoremap <F11> :set hlsearch! hlsearch?<CR>
 nnoremap <A-S-F11> :set hls<CR>:exec "let @/='\\<".expand("<cword>")."\\>'"<CR>
 set nohls " search highlighting on by default
 
+" OS Copy+Paste
+vnoremap <Leader>y "+y
+nnoremap <Leader>p "+gPl
+vnoremap <Leader>p :<C-U>call VPaste()<CR>
+"inoremap <Leader>p <C-O>:call IPaste()<CR>
+
+function! VPaste()
+  normal gv
+  normal "+P
+  normal l
+endfunction
+
+function! IPaste()
+  set virtualedit=all
+  normal `^"+gP
+  let &virtualedit = ""
+endfunction
+
 " Cycling through buffers
 nnoremap <C-j> :bnext<CR>
 nnoremap <C-k> :bprevious<CR>
