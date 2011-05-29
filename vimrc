@@ -43,7 +43,7 @@ set nohls " search highlighting on by default
 
 " OS Copy+Paste
 vnoremap <Leader>y "+y
-nnoremap <Leader>p "+gPl
+nnoremap <Leader>p "+gpl
 vnoremap <Leader>p :<C-U>call VPaste()<CR>
 "inoremap <Leader>p <C-O>:call IPaste()<CR>
 
