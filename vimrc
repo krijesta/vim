@@ -190,7 +190,7 @@ au BufNewFile,BufRead *.vssettings set filetype=xml
 
 " Markdown
 au BufNewFile,BufRead *.mkd,*.md set filetype=mkd
-au BufRead *.mkd,*.md set ai formatoptions=tcroqn2 comments=n:&gt;
+au FileType mkd set ai formatoptions=tcroqn2 comments=n:&gt;
 
 " Ruby
 au BufNewFile,BufRead *.rb,*.ru,rakefile,vagrantfile set filetype=ruby
