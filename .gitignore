@@ -2,6 +2,8 @@
 /doc/tags
 *.swp
 .netrwhist
+/ruby/command-t/mkmf.log
 /ruby/command-t/Makefile
 /ruby/command-t/*.o
+/ruby/command-t/*.so
 /ruby/command-t/*.bundle
