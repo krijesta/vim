@@ -1,13 +1,3 @@
-" Description:	html5 (and html4) indenter
-" Changed By:	Brian Gershon <brian.five@gmail.com>
-" Last Change:	30 Jan 2011
-" 
-"   1. Started with vim72 html indent file authored by Johannes Zellner (below)
-"   2. Added html5 list as described here:
-"      http://stackoverflow.com/questions/3232518/how-to-update-vim-to-color-code-new-html-elements
-"   3. Added this to a fork of https://github.com/othree/html5.vim
-"      which already provides nice html5 syntax highlighting.
-"
 " Description:	html indenter
 " Author:	Johannes Zellner <johannes@zellner.org>
 " Last Change:	Mo, 05 Jun 2006 22:32:41 CEST
@@ -17,14 +7,22 @@
 "		g:html_indent_strict_table -- inhibit 'O -' elements
 
 " Only load this indent file when no other was loaded.
-if exists("b:did_indent")
-    finish
+"if exists("b:did_indent")
+    "finish
+"endif
+"let b:did_indent = 1
+
+if exists("g:js_indent")
+	so g:js_indent
+else
+	ru! indent/javascript.vim
 endif
-let b:did_indent = 1
+
+"echo "Sourcing html indent"
 
 
 " [-- local settings (must come before aborting the script) --]
-setlocal indentexpr=HtmlIndentGet(v:lnum)
+setlocal indentexpr=HtmlIndentGetter(v:lnum)
 setlocal indentkeys=o,O,*<Return>,<>>,{,}
 
 
@@ -208,7 +206,8 @@ fun! <SID>HtmlIndentSum(lnum, style)
     return 0
 endfun
 
-fun! HtmlIndentGet(lnum)
+fun! HtmlIndentGetter(lnum)
+	"echo "Grabbing html indent for line: " . a:lnum
     " Find a non-empty line above the current line.
     let lnum = prevnonblank(a:lnum - 1)
 
@@ -232,7 +231,7 @@ fun! HtmlIndentGet(lnum)
     endif
 
     " [-- special handling for <javascript>: use cindent --]
-    let js = '<script.*type\s*=\s*.*java'
+    let js = '<script.*type\s*=.*javascript'
 
     """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     " by Tye Zdrojewski <zdro@yahoo.com>, 05 Jun 2006
@@ -245,11 +244,11 @@ fun! HtmlIndentGet(lnum)
     if   0 < searchpair(js, '', '</script>', 'nWb')
     \ && 0 < searchpair(js, '', '</script>', 'nW')
 	" we're inside javascript
-	if getline(lnum) !~ js && getline(a:lnum) != '</script>'
+	if getline(lnum) !~ js && getline(a:lnum) !~ '</script>'
 	    if restore_ic == 0
 	      setlocal noic
 	    endif
-	    return cindent(a:lnum)
+		return GetJsIndent(a:lnum)
 	endif
     endif
 
