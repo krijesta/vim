@@ -230,6 +230,8 @@ au FileType haskell call EnableWhitespace('et')
 let hs_highlight_types = 1
 let hs_highlight_boolean = 1
 
+nmap <Leader>h :!hoogle <C-r><C-w><CR>
+
 " Haskell Cabal
 au BufNewFile,BufRead *.cabal set filetype=cabal
 au FileType cabal setlocal tabstop=2
