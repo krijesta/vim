@@ -100,12 +100,14 @@ set foldmethod=marker
 " Tabularize
 nmap <Leader>a= :Tabularize /=<CR>
 vmap <Leader>a= :Tabularize /=<CR>
-nmap <Leader>a- :Tabularize /-><CR>
-vmap <Leader>a- :Tabularize /-><CR>
+nmap <Leader>a- :Tabularize /->\\|<-<CR>
+vmap <Leader>a- :Tabularize /->\\|<-<CR>
 nmap <Leader>a{ :Tabularize /{<CR>:Tabularize /}<CR>
 vmap <Leader>a{ :Tabularize /{<CR>:Tabularize /}<CR>
 nmap <Leader>a: :Tabularize /:\zs<CR>
 vmap <Leader>a: :Tabularize /:\zs<CR>
+nmap <Leader>ai :Tabularize /import qualified\\|import<CR>
+vmap <Leader>ai :Tabularize /import qualified\\|import<CR>
 
 inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
 
