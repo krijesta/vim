@@ -174,6 +174,12 @@ au FileType javascript setlocal tabstop=2
 au FileType javascript setlocal shiftwidth=2
 au FileType javascript call EnableWhitespace('et')
 
+" Coffeescript
+au FileType coffee setlocal tabstop=2
+au FileType coffee setlocal shiftwidth=2
+au FileType coffee setlocal makeprg=coffee\ --compile\ --lint\ %\ $*
+au FileType coffee call EnableWhitespace('et')
+
 " HTML
 au FileType html setlocal tabstop=2
 au FileType html setlocal shiftwidth=2
