@@ -88,6 +88,9 @@ nnoremap <Leader>r :CommandTFlush<CR>
 nnoremap <F3> :TlistToggle<CR>
 set wildignore=*.o,*.hi,*.p_o,*.p_hi,dist
 
+" Enable Pathogen
+call pathogen#runtime_append_all_bundles()
+
 " Code indenting and formatting
 filetype plugin on
 filetype indent on
