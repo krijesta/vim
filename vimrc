@@ -92,6 +92,7 @@ set wildignore=*.o,*.hi,*.p_o,*.p_hi,dist
 call pathogen#runtime_append_all_bundles()
 
 " Code indenting and formatting
+filetype off
 filetype plugin on
 filetype indent on
 set autoindent
