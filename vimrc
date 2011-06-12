@@ -235,6 +235,9 @@ au FileType arduino set autoindent
 au FileType arduino set smartindent
 au FileType arduino set cindent
 
+" C
+au FileType c syntax match cType /[a-z_][a-z0-9_]*_t[^a-z0-9_]/me=e-1
+
 " Haskell
 au BufNewFile,BufRead *.hs,*.hsc,*.lhs set filetype=haskell
 au BufNewFile,BufRead *.lhs set syntax=lhaskell
