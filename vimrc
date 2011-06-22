@@ -169,7 +169,8 @@ au BufNewFile,BufRead *.cdl set nocindent
 au BufNewFile,BufRead gitolite.conf,*/gitolite-admin/conf/* set filetype=gitolite
 au BufNewFile,BufRead {,.}gitolite.rc,example.gitolite.rc set filetype=perl
 
-" Javascript
+" Javascript / JSON
+au BufNewFile,BufRead *.json set filetype=javascript
 au FileType javascript setlocal tabstop=2
 au FileType javascript setlocal shiftwidth=2
 au FileType javascript call EnableWhitespace('et')
