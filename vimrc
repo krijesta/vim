@@ -86,7 +86,7 @@ nnoremap <F7> :w<CR> :HLint<CR>
 " Files & Tags
 nnoremap <Leader>r :CommandTFlush<CR>
 nnoremap <F3> :TlistToggle<CR>
-set wildignore=*.o,*.hi,*.p_o,*.p_hi,dist
+set wildignore=*.o,*.hi,*.p_o,*.p_hi,dist,_*/*
 
 " Enable Pathogen
 call pathogen#runtime_append_all_bundles()
