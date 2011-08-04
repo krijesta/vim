@@ -162,6 +162,9 @@ au FileType vim setlocal shiftwidth=2
 " ANTLR
 au BufNewFile,BufRead *.g set syntax=antlr
 
+" BNF
+au bufreadpre,bufnewfile *.bnf set filetype=bnf
+
 " CDL
 au BufNewFile,BufRead *.cdl set filetype=c
 au BufNewFile,BufRead *.cdl set noautoindent
