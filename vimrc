@@ -12,6 +12,9 @@ set autowrite                  " auto-save buffer on :make
 command! W :w " allow saving via :W
 let mapleader = ","
 
+" File format defaults
+set fileformats=unix,dos
+
 " Compatibility with different operating systems
 if has("win32") || has("win64")
   let g:vimdir = "~/vimfiles/"
