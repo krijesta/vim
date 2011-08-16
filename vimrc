@@ -18,6 +18,7 @@ set fileformats=unix,dos
 " Compatibility with different operating systems
 if has("win32") || has("win64")
   let g:vimdir = "~/vimfiles/"
+  let ruby_path="C:\Ruby192"
 else
   let g:vimdir = "~/.vim/"
 endif
@@ -68,13 +69,19 @@ nnoremap <C-k> :bprevious<CR>
 nnoremap <C-l> :bdelete<CR>
 nnoremap <C-h> :b#<CR>
 nnoremap <D-j> :tabnext<CR>
+nnoremap <A-j> :tabnext<CR>
 nnoremap <D-k> :tabprevious<CR>
+nnoremap <A-k> :tabprevious<CR>
 
 " Window resizing
 nnoremap <D-left>  :vertical resize -5<cr>
+nnoremap <A-left>  :vertical resize -5<cr>
 nnoremap <D-down>  :resize +5<cr>
+nnoremap <A-down>  :resize +5<cr>
 nnoremap <D-up>    :resize -5<cr>
+nnoremap <A-up>    :resize -5<cr>
 nnoremap <D-right> :vertical resize +5<cr>
+nnoremap <A-right> :vertical resize +5<cr>
 
 " Replace word under cursor
 " usage: type \s on "foo" and then type "bar/g" to
@@ -205,9 +212,9 @@ au FileType css call EnableWhitespace('et')
 " C#
 au FileType cs setlocal tabstop=4
 au FileType cs setlocal shiftwidth=4
-au FileType cs setlocal expandtab
+au FileType cs setlocal noexpandtab
 au FileType cs compiler msbuild
-au FileType cs call EnableWhitespace('et')
+au FileType cs call EnableWhitespace('es')
 
 " Visual Studio Settings
 au BufNewFile,BufRead *.vssettings set filetype=xml
