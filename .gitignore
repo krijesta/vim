@@ -7,3 +7,4 @@
 /ruby/command-t/*.o
 /ruby/command-t/*.so
 /ruby/command-t/*.bundle
+/ruby/command-t/*.def
