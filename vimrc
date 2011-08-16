@@ -12,8 +12,17 @@ set autowrite                  " auto-save buffer on :make
 command! W :w " allow saving via :W
 let mapleader = ","
 
-" File format defaults
+" File format / encoding
 set fileformats=unix,dos
+
+if has("multi_byte")
+  if &termencoding == ""
+    let &termencoding = &encoding
+  endif
+  set encoding=utf-8
+  setglobal fileencoding=utf-8
+  set fileencodings=ucs-bom,utf-8,latin1
+endif
 
 " Compatibility with different operating systems
 if has("win32") || has("win64")
