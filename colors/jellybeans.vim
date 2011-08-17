@@ -305,7 +305,7 @@ call s:X("Visual","","404040","","","")
 call s:X("Cursor","","b0d0f0","","","")
 
 call s:X("Normal","e8e8d3","151515","","White","")
-call s:X("LineNr","605958","151515","none","Black","")
+call s:X("LineNr","605958","151515","","DarkGrey","")
 call s:X("Comment","606060","","italic","Grey","")
 call s:X("Todo","8a61dc","","bold","","")
 
