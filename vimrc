@@ -49,10 +49,15 @@ nnoremap <silent> gw "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><c-o><c-l>
 " Run j macro
 nnoremap <Space> @j
 
-" Find in files
+" Grep word under cursor, same file type
 nnoremap <Leader>g
   \ :noautocmd lvim /\<lt><C-R><C-W>\>/gj
   \ **/*<C-R>=(expand("%:e")=="" ? "" : ".".expand("%:e"))<CR>
+  \ <Bar> lw<CR>
+" Grep word under cursor, all files
+nnoremap <Leader>G
+  \ :noautocmd lvim /\<lt><C-R><C-W>\>/gj
+  \ **
   \ <Bar> lw<CR>
 
 " Search highlighting toggle
