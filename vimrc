@@ -276,6 +276,7 @@ au FileType c syntax match cType /[a-z_][a-z0-9_]*_t[^a-z0-9_]/me=e-1
 au BufNewFile,BufRead *.hs,*.hsc,*.lhs set filetype=haskell
 au BufNewFile,BufRead *.lhs set syntax=lhaskell
 au FileType haskell compiler ghc
+au FileType haskell setlocal iskeyword+='
 au FileType haskell setlocal tabstop=4
 au FileType haskell setlocal shiftwidth=4
 au FileType haskell call EnableWhitespace('et')
