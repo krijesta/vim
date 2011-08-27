@@ -89,19 +89,19 @@ nnoremap <C-k> :bprevious<CR>
 nnoremap <C-l> :bdelete<CR>
 nnoremap <C-h> :b#<CR>
 nnoremap <D-j> :tabnext<CR>
-nnoremap <A-j> :tabnext<CR>
+nnoremap <C-J> :tabnext<CR>
 nnoremap <D-k> :tabprevious<CR>
-nnoremap <A-k> :tabprevious<CR>
+nnoremap <C-K> :tabprevious<CR>
 
 " Window resizing
-nnoremap <D-left>  :vertical resize -5<cr>
-nnoremap <A-left>  :vertical resize -5<cr>
-nnoremap <D-down>  :resize +5<cr>
-nnoremap <A-down>  :resize +5<cr>
-nnoremap <D-up>    :resize -5<cr>
-nnoremap <A-up>    :resize -5<cr>
-nnoremap <D-right> :vertical resize +5<cr>
-nnoremap <A-right> :vertical resize +5<cr>
+nnoremap <D-left>    :vertical resize -5<cr>
+nnoremap <C-S-left>  :vertical resize -5<cr>
+nnoremap <D-down>    :resize +5<cr>
+nnoremap <C-S-down>  :resize +5<cr>
+nnoremap <D-up>      :resize -5<cr>
+nnoremap <C-S-up>    :resize -5<cr>
+nnoremap <D-right>   :vertical resize +5<cr>
+nnoremap <C-S-right> :vertical resize +5<cr>
 
 " Replace word under cursor
 " usage: type \s on "foo" and then type "bar/g" to
