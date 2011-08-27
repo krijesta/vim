@@ -89,9 +89,9 @@ nnoremap <C-k> :bprevious<CR>
 nnoremap <C-l> :bdelete<CR>
 nnoremap <C-h> :b#<CR>
 nnoremap <D-j> :tabnext<CR>
-nnoremap <C-J> :tabnext<CR>
+nnoremap <A-J> :tabnext<CR>
 nnoremap <D-k> :tabprevious<CR>
-nnoremap <C-K> :tabprevious<CR>
+nnoremap <A-K> :tabprevious<CR>
 
 " Window resizing
 nnoremap <D-left>    :vertical resize -5<cr>
