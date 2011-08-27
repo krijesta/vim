@@ -138,8 +138,10 @@ nmap <Leader>a- :Tabularize /-\+>\\|<-\+<CR>
 vmap <Leader>a- :Tabularize /-\+>\\|<-\+<CR>
 nmap <Leader>a{ :Tabularize /{<CR>:Tabularize /}<CR>
 vmap <Leader>a{ :Tabularize /{<CR>:Tabularize /}<CR>
-nmap <Leader>a; :Tabularize /[^:]\+:<CR>
-vmap <Leader>a; :Tabularize /[^:]\+:<CR>
+nmap <leader>a; :Tabularize /:\zs/l0l1<CR>
+vmap <leader>a; :Tabularize /:\zs/l0l1<CR>
+nmap <leader>a, :Tabularize /,\zs/l0l1<CR>
+vmap <leader>a, :Tabularize /,\zs/l0l1<CR>
 nmap <Leader>ai :Tabularize /import qualified\\|import<CR>
 vmap <Leader>ai :Tabularize /import qualified\\|import<CR>
 
