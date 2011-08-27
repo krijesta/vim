@@ -265,9 +265,9 @@ au BufNewFile,BufRead *.gml set filetype=config
 
 " Arduino
 au BufNewFile,BufRead *.pde set filetype=arduino
-au FileType arduino set autoindent
-au FileType arduino set smartindent
-au FileType arduino set cindent
+au FileType arduino setlocal autoindent
+au FileType arduino setlocal smartindent
+au FileType arduino setlocal cindent
 
 " C
 au FileType c syntax match cType /[a-z_][a-z0-9_]*_t[^a-z0-9_]/me=e-1
