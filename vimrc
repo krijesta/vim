@@ -241,6 +241,10 @@ au FileType cs call EnableWhitespace('es')
 " Visual Studio Settings
 au BufNewFile,BufRead *.vssettings set filetype=xml
 
+" PowerShell
+au BufNewFile,BufRead *.ps1 set filetype=ps1
+au FileType ps1 call EnableWhitespace('et')
+
 " Markdown
 au FileType markdown set ai comments=n:&gt;
 au FileType markdown set textwidth=72 formatoptions=tcroqn2
