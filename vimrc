@@ -132,8 +132,8 @@ set expandtab
 set foldmethod=marker
 
 " Tabularize
-nmap <Leader>a= :Tabularize /=\+<CR>
-vmap <Leader>a= :Tabularize /=\+<CR>
+nmap <Leader>a= :Tabularize /+\?=\+<CR>
+vmap <Leader>a= :Tabularize /+\?=\+<CR>
 nmap <Leader>a- :Tabularize /-\+>\\|<-\+<CR>
 vmap <Leader>a- :Tabularize /-\+>\\|<-\+<CR>
 nmap <Leader>a{ :Tabularize /{<CR>:Tabularize /}<CR>
