@@ -63,7 +63,7 @@ nnoremap <Leader>G
 " Search highlighting toggle
 nnoremap <F11> :set hlsearch! hlsearch?<CR>
 nnoremap <A-S-F11> :set hls<CR>:exec "let @/='\\<".expand("<cword>")."\\>'"<CR>
-set nohls " search highlighting on by default
+set nohls " search highlighting off by default
 
 " OS Copy+Paste
 vnoremap <Leader>y "+y
