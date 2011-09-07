@@ -34,7 +34,7 @@ endif
 let g:vimrc = g:vimdir . "vimrc"
 
 " Edit .vimrc
-nmap <leader>v :exec ":tabedit " . g:vimrc<CR>
+nmap <leader>v :exec ":e " . g:vimrc<CR>
 
 " Source the vimrc file after saving it
 if has("autocmd")
