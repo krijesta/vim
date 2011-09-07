@@ -4,3 +4,14 @@ My Vim Settings
   contents.
 
     exe "source ~/.vim/vimrc"
+
+  Alternatively on machines that support symlinks (not Windows) create a
+  symlink in your home directory called ~/.vimrc pointing to ~/.vim/vimrc
+  with the command:
+
+    $ ln -s ~/.vim/vimrc ~/.vimrc
+
+  as this allows editing the file in with vim ~/.vimrc
+
+If you are using a gui for vim then you will also want to create the 
+same file/symlink for .gvimrc
