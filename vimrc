@@ -38,7 +38,7 @@ nmap <leader>v :exec ":tabedit " . g:vimrc<CR>
 
 " Source the vimrc file after saving it
 if has("autocmd")
-  autocmd! BufWritePost vimrc exec "source " . g:vimrc
+  autocmd! BufWritePost *vimrc exec "source " . g:vimrc
 endif
 
 " Swap current character with next
