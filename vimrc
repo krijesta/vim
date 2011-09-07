@@ -248,6 +248,7 @@ au FileType ps1 call EnableWhitespace('et')
 " Markdown
 au FileType markdown set ai comments=n:&gt;
 au FileType markdown set textwidth=72 formatoptions=tcroqn2
+au FileType markdown call EnableWhitespace('et')
 
 " Ruby
 au BufNewFile,BufRead *.rb,*.ru,rakefile,vagrantfile set filetype=ruby
