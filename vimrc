@@ -8,6 +8,9 @@ set ruler                      " show cursor position
 set showcmd                    " display incomplete commands
 set incsearch                  " do incremental searching
 set autowrite                  " auto-save buffer on :make
+set laststatus=2               " Always show filename at the bottom
+set ignorecase smartcase       " Smart case matching for search
+set infercase                  " Smart case matching for autocompletion
 
 command! W :w " allow saving via :W
 let mapleader = ","
