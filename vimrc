@@ -34,7 +34,7 @@ endif
 let g:vimrc = g:vimdir . "vimrc"
 
 " Edit .vimrc
-nmap <leader>v :exec ":e " . g:vimrc<CR>
+nmap <Leader>v :exec ":e " . g:vimrc<CR>
 
 " Source the vimrc file after saving it
 if has("autocmd")
@@ -42,9 +42,9 @@ if has("autocmd")
 endif
 
 " Swap current character with next
-nnoremap <silent> gc xph
+nnoremap <Silent> gc xph
 " Swap current word with next
-nnoremap <silent> gw "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><c-o><c-l>
+nnoremap <Silent> gw "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><C-o><C-l>
 
 " Run j macro
 nnoremap <Space> @j
@@ -140,14 +140,14 @@ nmap <Leader>a- :Tabularize /-\+>\\|<-\+<CR>
 vmap <Leader>a- :Tabularize /-\+>\\|<-\+<CR>
 nmap <Leader>a{ :Tabularize /{<CR>:Tabularize /}<CR>
 vmap <Leader>a{ :Tabularize /{<CR>:Tabularize /}<CR>
-nmap <leader>a; :Tabularize /:\zs/l0l1<CR>
-vmap <leader>a; :Tabularize /:\zs/l0l1<CR>
-nmap <leader>a, :Tabularize /,\zs/l0l1<CR>
-vmap <leader>a, :Tabularize /,\zs/l0l1<CR>
+nmap <Leader>a; :Tabularize /:\zs/l0l1<CR>
+vmap <Leader>a; :Tabularize /:\zs/l0l1<CR>
+nmap <Leader>a, :Tabularize /,\zs/l0l1<CR>
+vmap <Leader>a, :Tabularize /,\zs/l0l1<CR>
 nmap <Leader>ai :Tabularize /import qualified\\|import<CR>
 vmap <Leader>ai :Tabularize /import qualified\\|import<CR>
 
-inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
+inoremap <Silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
 
 function! s:align()
   let p = '^\s*|\s.*\s|\s*$'
