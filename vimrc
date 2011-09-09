@@ -155,6 +155,14 @@ vnoremap <Leader>a, :Tabularize /,\zs/l0l1<CR>
 
 inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
 
+" Swap the current table entry with the next one (see align below)
+nnoremap <silent> g<Bar>
+  \ T<Bar>
+  \ :s/<Bar>\s\+\%#\s\{}\([^<Bar>]\{-}\)\s\+<Bar>\s\+\([^<Bar>]\{-}\)\s\+<Bar>/
+  \<Bar> \2 <Bar> \1 <Bar>
+  \/<CR><c-o>
+  \ :call <SID>align()<CR><c-l>
+
 function! s:align()
   let p = '^\s*|\s.*\s|\s*$'
   if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
