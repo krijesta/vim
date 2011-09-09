@@ -42,9 +42,9 @@ if has("autocmd")
 endif
 
 " Swap current character with next
-nnoremap <Silent> gc xph
+nnoremap <silent> gc xph
 " Swap current word with next
-nnoremap <Silent> gw "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><C-o><C-l>
+nnoremap <silent> gw "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><C-o><C-l>
 
 " Run j macro
 nnoremap <Space> @j
@@ -145,7 +145,7 @@ vnoremap <Leader>a; :Tabularize /:\zs/l0l1<CR>
 nnoremap <Leader>a, :Tabularize /,\zs/l0l1<CR>
 vnoremap <Leader>a, :Tabularize /,\zs/l0l1<CR>
 
-inoremap <Silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
+inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
 
 function! s:align()
   let p = '^\s*|\s.*\s|\s*$'
