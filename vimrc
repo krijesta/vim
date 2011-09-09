@@ -144,8 +144,6 @@ nnoremap <Leader>a; :Tabularize /:\zs/l0l1<CR>
 vnoremap <Leader>a; :Tabularize /:\zs/l0l1<CR>
 nnoremap <Leader>a, :Tabularize /,\zs/l0l1<CR>
 vnoremap <Leader>a, :Tabularize /,\zs/l0l1<CR>
-nnoremap <Leader>ai :Tabularize /import qualified\\|import<CR>
-vnoremap <Leader>ai :Tabularize /import qualified\\|import<CR>
 
 inoremap <Silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
 
@@ -292,7 +290,12 @@ au FileType haskell call EnableWhitespace('et')
 let hs_highlight_types = 1
 let hs_highlight_boolean = 1
 
-nnoremap <Leader>h :!hoogle <C-r><C-w><CR>
+" Haskell - hoogle word under cursor
+au FileType haskell nnoremap <Leader>h :!hoogle <C-r><C-w><CR>
+
+" Haskell - sort then align imports
+au FileType haskell nnoremap <Leader>ai
+    \ vip:sort r /\u\.*/<CR> <Bar> :Tabularize /^import qualified\\|^import\\|^$<CR>
 
 " Haskell Cabal
 au BufNewFile,BufRead *.cabal set filetype=cabal
