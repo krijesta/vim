@@ -34,7 +34,7 @@ endif
 let g:vimrc = g:vimdir . "vimrc"
 
 " Edit .vimrc
-nmap <Leader>v :exec ":e " . g:vimrc<CR>
+nnoremap <Leader>v :exec ":e " . g:vimrc<CR>
 
 " Source the vimrc file after saving it
 if has("autocmd")
@@ -134,18 +134,18 @@ set expandtab
 set foldmethod=marker
 
 " Tabularize
-nmap <Leader>a= :Tabularize /[+&]\?=\+<CR>
-vmap <Leader>a= :Tabularize /[+&]\?=\+<CR>
-nmap <Leader>a- :Tabularize /-\+>\\|<-\+<CR>
-vmap <Leader>a- :Tabularize /-\+>\\|<-\+<CR>
-nmap <Leader>a{ :Tabularize /{<CR>:Tabularize /}<CR>
-vmap <Leader>a{ :Tabularize /{<CR>:Tabularize /}<CR>
-nmap <Leader>a; :Tabularize /:\zs/l0l1<CR>
-vmap <Leader>a; :Tabularize /:\zs/l0l1<CR>
-nmap <Leader>a, :Tabularize /,\zs/l0l1<CR>
-vmap <Leader>a, :Tabularize /,\zs/l0l1<CR>
-nmap <Leader>ai :Tabularize /import qualified\\|import<CR>
-vmap <Leader>ai :Tabularize /import qualified\\|import<CR>
+nnoremap <Leader>a= :Tabularize /[+&]\?=\+<CR>
+vnoremap <Leader>a= :Tabularize /[+&]\?=\+<CR>
+nnoremap <Leader>a- :Tabularize /-\+>\\|<-\+<CR>
+vnoremap <Leader>a- :Tabularize /-\+>\\|<-\+<CR>
+nnoremap <Leader>a{ :Tabularize /{<CR>:Tabularize /}<CR>
+vnoremap <Leader>a{ :Tabularize /{<CR>:Tabularize /}<CR>
+nnoremap <Leader>a; :Tabularize /:\zs/l0l1<CR>
+vnoremap <Leader>a; :Tabularize /:\zs/l0l1<CR>
+nnoremap <Leader>a, :Tabularize /,\zs/l0l1<CR>
+vnoremap <Leader>a, :Tabularize /,\zs/l0l1<CR>
+nnoremap <Leader>ai :Tabularize /import qualified\\|import<CR>
+vnoremap <Leader>ai :Tabularize /import qualified\\|import<CR>
 
 inoremap <Silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
 
@@ -292,7 +292,7 @@ au FileType haskell call EnableWhitespace('et')
 let hs_highlight_types = 1
 let hs_highlight_boolean = 1
 
-nmap <Leader>h :!hoogle <C-r><C-w><CR>
+nnoremap <Leader>h :!hoogle <C-r><C-w><CR>
 
 " Haskell Cabal
 au BufNewFile,BufRead *.cabal set filetype=cabal
