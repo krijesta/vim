@@ -277,7 +277,8 @@ au FileType arduino setlocal smartindent
 au FileType arduino setlocal cindent
 
 " C
-au FileType c syntax match cType /[a-z_][a-z0-9_]*_t[^a-z0-9_]/me=e-1
+au FileType c syntax match cType /\h\w*_t\W/me=e-1
+au FileType c syntax match cConstant /\W[A-Z_][A-Z0-9_]*\W/ms=s+1,me=e-1
 
 " Haskell
 au BufNewFile,BufRead *.hs,*.hsc,*.lhs set filetype=haskell
