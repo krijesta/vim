@@ -126,7 +126,7 @@ set wildmode=list:longest           " File completion bash-style
 
 
 " Enable Pathogen
-call pathogen#runtime_append_all_bundles()
+call pathogen#infect()
 
 " Code indenting and formatting
 filetype plugin on
