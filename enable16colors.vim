@@ -6,7 +6,7 @@ endif
 
 " Vim defaults to only 8 colors in some cases, but even
 " Windows terminals have support for 16 colors, so lets
-" make we use them. We also need to set the background
+" make sure we use them. We also need to set the background
 " and foreground color, because the defaults aren't great.
 if has("terminfo")
   set t_Co=16
