@@ -329,6 +329,10 @@ au FileType alex setlocal makeprg=alex\ %\ &&\ ghc\ -e\ :q\ %:r.hs
 au FileType alex call EnableWhitespace('et')
 au BufNewFile,BufRead *.y set filetype=happy
 
+" Google protobuf highlighiting
+au! BufRead,BufNewFile *.proto setfiletype proto
+
+
 function! HLint()
   try
     compiler hlint
