@@ -137,6 +137,10 @@ nnoremap <Leader>a= :Tabularize /[+&]\?=\+[>]\?<CR>
 vnoremap <Leader>a= :Tabularize /[+&]\?=\+[>]\?<CR>
 nnoremap <Leader>a- :Tabularize /-\+>\\|<-\+<CR>
 vnoremap <Leader>a- :Tabularize /-\+>\\|<-\+<CR>
+nnoremap <Leader>at :Tabularize /:\+<CR>
+vnoremap <Leader>at :Tabularize /:\+<CR>
+nnoremap <Leader>ac :Tabularize /--<CR>
+vnoremap <Leader>ac :Tabularize /--<CR>
 nnoremap <Leader>a{ :Tabularize /{<CR>:Tabularize /}<CR>
 vnoremap <Leader>a{ :Tabularize /{<CR>:Tabularize /}<CR>
 nnoremap <Leader>a; :Tabularize /:\zs/l0l1<CR>
