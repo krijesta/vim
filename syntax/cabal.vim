@@ -25,8 +25,11 @@ elseif exists("b:current_syntax")
   finish
 endif
 
-syn keyword	cabalCategory	Library library Executable executable Flag flag
-syn keyword	cabalCategory	source-repository Source-Repository
+syn match	cabalCategory   "\cflag"
+syn match	cabalCategory	"\clibrary"
+syn match	cabalCategory	"\cexecutable"
+syn match	cabalCategory	"\csource-repository"
+syn match	cabalCategory	"\ctest-suite"
 
 syn keyword     cabalConditional    if else
 syn match       cabalOperator       "&&\|||\|!\|==\|>=\|<="
@@ -64,7 +67,6 @@ syn match	cabalStatement	"\cdata-dir"
 syn match	cabalStatement	"\cdata-files"
 syn match	cabalStatement	"\cdefault"
 syn match	cabalStatement	"\cdescription"
-syn match	cabalStatement	"\cexecutable"
 syn match	cabalStatement	"\cexposed-modules"
 syn match	cabalStatement	"\cexposed"
 syn match	cabalStatement	"\cextensions"
