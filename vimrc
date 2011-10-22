@@ -12,6 +12,9 @@ set laststatus=2               " Always show filename at the bottom
 set ignorecase smartcase       " Smart case matching for search
 set infercase                  " Smart case matching for autocompletion
 
+" Mode lines are disabled by default on OSX, see CVE-2007-2438, re-enable them
+set modelines=5
+
 command! W :w " allow saving via :W
 let mapleader = ","
 
@@ -153,6 +156,9 @@ vnoremap <Leader>a; :Tabularize /:\zs/l0l1<CR>
 nnoremap <Leader>a, :Tabularize /,\zs/l0l1<CR>
 vnoremap <Leader>a, :Tabularize /,\zs/l0l1<CR>
 
+" TODO: There is an issue with this line, if you are inserting text
+" in block visual mode and wish to type a bar is will break the block 
+" insert
 inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
 
 " Swap the current table entry with the next one (see align below)
