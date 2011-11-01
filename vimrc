@@ -280,12 +280,13 @@ au FileType arduino setlocal smartindent
 au FileType arduino setlocal cindent
 
 " C
+au BufNewFile,BufRead *.dump-cmm set filetype=c
 au FileType c syntax match cType /\h\w*_t\W/me=e-1
 au FileType c syntax match cConstant /\W[A-Z_][A-Z0-9_]*\W/ms=s+1,me=e-1
 au FileType c call EnableWhitespace('et')
 
 " Haskell
-au BufNewFile,BufRead *.hs,*.hsc,*.lhs set filetype=haskell
+au BufNewFile,BufRead *.hs,*.hsc,*.lhs,*.dump-simpl set filetype=haskell
 au BufNewFile,BufRead *.lhs set syntax=lhaskell
 au FileType haskell compiler ghc
 au FileType haskell setlocal iskeyword+='
