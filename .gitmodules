@@ -1,3 +1,9 @@
 [submodule "bundle/vim-coffee-script"]
 	path = bundle/vim-coffee-script
 	url = https://github.com/vim-scripts/vim-coffee-script.git
+[submodule "bundle/neco-ghc"]
+	path = bundle/neco-ghc
+	url = http://github.com/ujihisa/neco-ghc.git
+[submodule "bundle/neocomplcache"]
+	path = bundle/neocomplcache
+	url = http://github.com/Shougo/neocomplcache.git

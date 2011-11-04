@@ -187,6 +187,10 @@ colorscheme jellybeans
 set number
 set numberwidth=5
 
+" Neocomplcache
+let g:neocomplcache_enable_at_startup = 1
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
 " Vim
 au FileType vim setlocal tabstop=2
 au FileType vim setlocal shiftwidth=2
@@ -288,10 +292,12 @@ au FileType c call EnableWhitespace('et')
 " Haskell
 au BufNewFile,BufRead *.hs,*.hsc,*.lhs,*.dump-simpl set filetype=haskell
 au BufNewFile,BufRead *.lhs set syntax=lhaskell
-au FileType haskell compiler ghc
+au FileType haskell compiler ghcmod
 au FileType haskell setlocal iskeyword+='
 au FileType haskell setlocal tabstop=4
 au FileType haskell setlocal shiftwidth=4
+au FileType haskell setlocal include=^import\\s*\\(qualified\\)\\?\\s*
+au FileType haskell setlocal includeexpr=substitute(v:fname,'\\.','/','g').'.'
 au FileType haskell call EnableWhitespace('et')
 let hs_highlight_types = 1
 let hs_highlight_boolean = 1
