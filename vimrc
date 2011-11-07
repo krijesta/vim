@@ -207,6 +207,9 @@ au BufNewFile,BufRead *.cdl set noautoindent
 au BufNewFile,BufRead *.cdl set nosmartindent
 au BufNewFile,BufRead *.cdl set nocindent
 
+" Config
+au BufNewFile,BufRead *.cfg set filetype=config
+
 " Gitolite
 au BufNewFile,BufRead gitolite.conf,*/gitolite-admin/conf/* set filetype=gitolite
 au BufNewFile,BufRead {,.}gitolite.rc,example.gitolite.rc set filetype=perl
