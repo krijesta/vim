@@ -15,7 +15,7 @@ if !executable('ghc-mod')
 endif
 
 " set makeprg (for quickfix mode) 
-setlocal makeprg=(ghc-mod\ check\ %\ &\ ghc-mod\ lint\ %)\ \\\|\ tr\ '\\000'\ '\\n'
+setlocal makeprg=\"(ghc-mod\ check\ %\ &\ ghc-mod\ lint\ %)\ \\\|\ tr\ '\\000'\ '\\n'\"
 
 " quickfix mode: 
 " fetch file/line-info from error messages
