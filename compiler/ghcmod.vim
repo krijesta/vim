@@ -21,7 +21,8 @@ setlocal makeprg=(ghc-mod\ check\ %\ &\ ghc-mod\ lint\ %)\ \\\|\ tr\ '\\000'\ '\
 " fetch file/line-info from error messages
 setlocal errorformat=
       \%-G\\s%#,
-      \%E%f:%l:%c:\ Error:\ %m,
       \%W%f:%l:%c:\ Warning:\ %m,
+      \%W%f:%l:%c:Warning:\ %m,
+      \%E%f:%l:%c:\ Error:\ %m,
       \%E%f:%l:%c:%m,
       \%m
