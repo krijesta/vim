@@ -15,7 +15,17 @@ if !executable('ghc-mod')
 endif
 
 " set makeprg (for quickfix mode) 
-setlocal makeprg=\"(ghc-mod\ check\ %\ &\ ghc-mod\ lint\ %)\ \\\|\ tr\ '\\000'\ '\\n'\"
+let path = shellescape(expand('%'))
+let check_then_lint = '(ghc-mod\ check\ '.path.'\ &\ ghc-mod\ lint\ '.path.')\ \\\|\ tr\ ''\\000''\ ''\\n'''
+
+" In order to pass a pipe (|) windows needs the whole command to be quoted.
+" If we quote the whole command under posix it is interpreted as looking for a
+" file with that name.
+if has("win32") || has("win64")
+exec "setlocal makeprg=\\\"".check_then_lint."\\\""
+else
+exec "setlocal makeprg=".check_then_lint
+endif
 
 " quickfix mode: 
 " fetch file/line-info from error messages
