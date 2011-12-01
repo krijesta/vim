@@ -52,9 +52,6 @@ nnoremap <silent> gc xph
 " Swap current word with next
 nnoremap <silent> gw "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><C-o><C-l>
 
-" Run j macro
-nnoremap <Space> @j
-
 " Grep word under cursor, same file type
 nnoremap <Leader>g
   \ :noautocmd lvim /\<lt><C-R><C-W>\>/gj
@@ -121,12 +118,14 @@ nnoremap <F5> :w<CR> :!ghc -e main <C-R>=expand("%:p")<CR><CR>
 nnoremap <F6> :w<CR> :make<CR>
 nnoremap <F7> :w<CR> :HLint<CR>
 
-" Files & Tags
-nnoremap <Leader>r :CommandTFlush<CR>
-nnoremap <F3> :TlistToggle<CR>
+" Command-T
+nnoremap <silent> <Leader>t :CommandT<CR>
+nnoremap <silent> <Leader>b :CommandTBuffer<CR>
+nnoremap <silent> <Leader>r :CommandTFlush<CR>
+
+" Wildcard config for file listing / completion
 set wildignore=*.bak,*.dll,*dist,.exe,*.gif,*.hi,*.jpg,*.o,*.obj*,*.png,*.pyc,*.p_o,*.p_hi,_*/*
 set wildmode=list:longest           " File completion bash-style
-
 
 " Enable Pathogen
 call pathogen#infect()
@@ -251,9 +250,8 @@ au FileType css call EnableWhitespace('et')
 " C#
 au FileType cs setlocal tabstop=4
 au FileType cs setlocal shiftwidth=4
-au FileType cs setlocal noexpandtab
 au FileType cs compiler msbuild
-au FileType cs call EnableWhitespace('es')
+au FileType cs call EnableWhitespace('et')
 
 " Visual Studio Settings
 au BufNewFile,BufRead *.vssettings set filetype=xml

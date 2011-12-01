@@ -1,0 +1,4 @@
+#!/bin/sh -e
+
+# Run the upgrade script
+$( dirname "$0" )/upgrade --fetch-only
