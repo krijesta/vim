@@ -46,9 +46,6 @@ nnoremap <silent> gc xph
 " Swap current word with next
 nnoremap <silent> gw "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><C-o><C-l>
 
-" Run j macro
-nnoremap <Space> @j
-
 " Grep word under cursor, same file type
 nnoremap <Leader>g
   \ :noautocmd lvim /\<lt><C-R><C-W>\>/gj
