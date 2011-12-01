@@ -113,12 +113,14 @@ nnoremap <F5> :w<CR> :!ghc -e main <C-R>=expand("%:p")<CR><CR>
 nnoremap <F6> :w<CR> :make<CR>
 nnoremap <F7> :w<CR> :HLint<CR>
 
-" Files & Tags
-nnoremap <Leader>r :CommandTFlush<CR>
-nnoremap <F3> :TlistToggle<CR>
+" Command-T
+nnoremap <silent> <Leader>t :CommandT<CR>
+nnoremap <silent> <Leader>b :CommandTBuffer<CR>
+nnoremap <silent> <Leader>r :CommandTFlush<CR>
+
+" Wildcard config for file listing / completion
 set wildignore=*.bak,*.dll,*dist,.exe,*.gif,*.hi,*.jpg,*.o,*.obj*,*.png,*.pyc,*.p_o,*.p_hi,_*/*
 set wildmode=list:longest           " File completion bash-style
-
 
 " Enable Pathogen
 call pathogen#runtime_append_all_bundles()
