@@ -185,6 +185,12 @@ colorscheme jellybeans
 set number
 set numberwidth=5
 
+" Error Markers
+let errormarker_erroricon    = expand(g:vimdir . "icons/error.bmp")
+let errormarker_warningicon  = expand(g:vimdir . "icons/warning.bmp")
+let errormarker_errorgroup   = "ErrorMsg"
+let errormarker_warninggroup = "WarningMsg"
+
 " Neocomplcache
 let g:neocomplcache_enable_at_startup = 1
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
