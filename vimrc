@@ -108,7 +108,6 @@ nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
 " Make
 nnoremap <F5> :w<CR> :!ghc -e main <C-R>=expand("%:p")<CR><CR>
 nnoremap <F6> :w<CR> :make<CR>
-nnoremap <F7> :w<CR> :HLint<CR>
 
 " Command-T
 nnoremap <silent> <Leader>t :CommandT<CR>
@@ -328,17 +327,6 @@ au BufNewFile,BufRead *.y set filetype=happy
 
 " Google protobuf highlighiting
 au! BufRead,BufNewFile *.proto setfiletype proto
-
-function! HLint()
-  try
-    compiler hlint
-    make
-  finally
-    compiler ghc
-  endtry
-endfunction
-
-command! HLint :call HLint()
 
 function! s:RunShellCommand(cmdline)
   botright new

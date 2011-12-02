@@ -1,4 +1,2 @@
-haskellmode-20090430.vba: call delete('/home/jake/.vim/compiler/ghc.vim')|call delete('/home/jake/.vim/ftplugin/haskell.vim')|call delete('/home/jake/.vim/ftplugin/haskell_doc.vim')|call delete('/home/jake/.vim/ftplugin/haskell_hpaste.vim')|call delete('/home/jake/.vim/autoload/haskellmode.vim')|call delete('/home/jake/.vim/doc/haskellmode.txt')
 cabal.vba: call delete('/home/jake/.vim/ftdetect/cabal.vim')|call delete('/home/jake/.vim/syntax/cabal.vim')
-hlint.vba: call delete('/home/jake/.vim/compiler/hlint.vim')
 markdown-1.2.2.vba: call delete('/home/jake/.vim/ftdetect/markdown.vim')|call delete('/home/jake/.vim/snippets/markdown.snippets')|call delete('/home/jake/.vim/syntax/markdown.vim')
