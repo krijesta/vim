@@ -116,7 +116,6 @@ nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
 " Make
 nnoremap <F5> :w<CR> :!ghc -e main <C-R>=expand("%:p")<CR><CR>
 nnoremap <F6> :w<CR> :make<CR>
-nnoremap <F7> :w<CR> :HLint<CR>
 
 " Command-T
 nnoremap <silent> <Leader>t :CommandT<CR>
@@ -192,6 +191,12 @@ call Load("enable16colors.vim")
 colorscheme jellybeans
 set number
 set numberwidth=5
+
+" Error Markers
+let errormarker_erroricon    = expand(g:vimdir . "icons/error.bmp")
+let errormarker_warningicon  = expand(g:vimdir . "icons/warning.bmp")
+let errormarker_errorgroup   = "ErrorMsg"
+let errormarker_warninggroup = "WarningMsg"
 
 " Neocomplcache
 let g:neocomplcache_enable_at_startup = 1
@@ -335,18 +340,6 @@ au BufNewFile,BufRead *.y set filetype=happy
 
 " Google protobuf highlighiting
 au! BufRead,BufNewFile *.proto setfiletype proto
-
-
-function! HLint()
-  try
-    compiler hlint
-    make
-  finally
-    compiler ghc
-  endtry
-endfunction
-
-command! HLint :call HLint()
 
 function! s:RunShellCommand(cmdline)
   botright new

@@ -341,7 +341,8 @@ call s:X("SpecialKey","808080","343434","","","")
 call s:X("Search","f0a0c0","302028","underline","Magenta","")
 
 call s:X("Directory","dad085","","","","")
-call s:X("ErrorMsg","","902020","","","")
+call s:X("ErrorMsg","ffffff","902020","","","")
+call s:X("WarningMsg","ffffff","a55926","","","")
 hi link Error ErrorMsg
 
 " Diff
