@@ -322,8 +322,9 @@ endif
 au FileType haskell setlocal iskeyword+='
 au FileType haskell setlocal tabstop=4
 au FileType haskell setlocal shiftwidth=4
+au FileType haskell setlocal path=src,,
 au FileType haskell setlocal include=^import\\s*\\(qualified\\)\\?\\s*
-au FileType haskell setlocal includeexpr=substitute(v:fname,'\\.','/','g').'.'
+au FileType haskell setlocal includeexpr=substitute(v:fname,'\\.','/','g').'.hs'
 au FileType haskell call EnableWhitespace('et')
 let hs_highlight_types = 1
 let hs_highlight_boolean = 1
