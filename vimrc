@@ -175,8 +175,12 @@ else
   set guifont=Inconsolata\ 19
 endif
 
+" Hide menu bar
+set guioptions-=m
 " Hide toolbar
 set guioptions-=T
+" Hide right-hand scroll bar
+set guioptions-=r
 
 " Color scheme
 syntax on
