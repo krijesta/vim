@@ -172,7 +172,7 @@ if has("win32") || has("win64")
 elseif has("gui_mac") || has("gui_macvim")
   set guifont=Inconsolata:h19,Menlo:h18
 else
-  set guifont=Monospace\ 15
+  set guifont=Inconsolata\ 19
 endif
 
 " Hide toolbar
