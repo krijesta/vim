@@ -301,7 +301,7 @@ if version >= 700
   call s:X("PmenuSel","101010","eeeeee","","","")
 endif
 
-call s:X("Visual","","404040","","","")
+call s:X("Visual","","404040","","Black","DarkBlue")
 call s:X("Cursor","","b0d0f0","","","")
 
 call s:X("Normal","e8e8d3","151515","","White","")
@@ -313,7 +313,7 @@ call s:X("StatusLine","f0f0f0","101010","italic","","")
 call s:X("StatusLineNC","a0a0a0","181818","italic","","")
 call s:X("VertSplit","181818","181818","italic","","")
 
-call s:X("Folded","a0a8b0","384048","italic","black","")
+call s:X("Folded","a0a8b0","384048","italic","Black","DarkGreen")
 call s:X("FoldColumn","a0a8b0","384048","","","")
 call s:X("SignColumn","a0a8b0","384048","","","")
 
