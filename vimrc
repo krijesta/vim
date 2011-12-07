@@ -1,4 +1,8 @@
-set nocompatible " use vim settings (rather than vi)
+" Always store vim directory in ~/.vim, even on Windows
+set runtimepath=$HOME/.vim,$VIMRUNTIME,$HOME/.vim/after
+
+" Use vim settings (rather than vi)
+set nocompatible
 
 set hidden                     " don't discard buffer when switching away
 set backspace=indent,eol,start " allow backspace over everthing
@@ -24,16 +28,10 @@ if has("multi_byte")
   set fileencodings=ucs-bom,utf-8,latin1
 endif
 
-" Compatibility with different operating systems
-if has("win32") || has("win64")
-  let g:vimdir = "~/vimfiles/"
-  let ruby_path="C:\Ruby192"
-else
-  let g:vimdir = "~/.vim/"
-endif
-let g:vimrc = g:vimdir . "vimrc"
+" Location of vimrc
+let g:vimrc = "~/.vim/vimrc"
 
-" Edit .vimrc
+" Edit vimrc
 nnoremap <Leader>v :exec ":e " . g:vimrc<CR>
 
 " Source the vimrc file after saving it
@@ -162,10 +160,6 @@ endfunction
 " Ctags
 set tags=tags;/
 
-function! Load(relative_path)
-  exec "source " . g:vimdir . a:relative_path
-endfunction
-
 " Font
 if has("win32") || has("win64")
   set guifont=DejaVu_Sans_Mono:h14:cANSI
@@ -184,14 +178,14 @@ set guioptions-=r
 
 " Color scheme
 syntax on
-call Load("enable16colors.vim")
+source ~/.vim/enable16colors.vim
 colorscheme jellybeans
 set number
 set numberwidth=5
 
 " Error Markers
-let errormarker_erroricon    = expand(g:vimdir . "icons/error.bmp")
-let errormarker_warningicon  = expand(g:vimdir . "icons/warning.bmp")
+let errormarker_erroricon    = expand("~/.vim/icons/error.bmp")
+let errormarker_warningicon  = expand("~/.vim/icons/warning.bmp")
 let errormarker_errorgroup   = "ErrorMsg"
 let errormarker_warninggroup = "WarningMsg"
 
@@ -277,6 +271,10 @@ au FileType ruby let g:rubycomplete_include_object = 1
 au FileType ruby let g:rubycomplete_include_objectspace = 1
 au FileType ruby call EnableWhitespace('et')
 
+if has("win32") || has("win64")
+  let ruby_path="C:\Ruby192"
+endif
+
 " Object J
 au BufNewFile,BufRead *.j set filetype=objj
 au BufNewFile,BufRead *.sj set filetype=javascript
@@ -351,4 +349,4 @@ endfunction
 command! -complete=file -nargs=+ Run call s:RunShellCommand(<q-args>)
 
 " Other scripts
-call Load("whitespace.vim")
+source ~/.vim/whitespace.vim
