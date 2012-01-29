@@ -315,7 +315,7 @@ au FileType haskell nnoremap <Leader>h :!hoogle <C-r><C-w><CR>
 
 " Haskell - sort then align imports
 au FileType haskell nnoremap <Leader>ai
-    \ vip:sort r /\u\.*/<CR> <Bar> :Tabularize /^import qualified\\|^import\\|^$<CR>
+    \ vip :sort r /\u.*/<CR> <Bar> :Tabularize /^import qualified\\|^import\\|^$<CR>
 
 " Haskell Cabal
 au BufNewFile,BufRead *.cabal set filetype=cabal
