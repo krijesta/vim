@@ -113,8 +113,12 @@ nnoremap <silent> <Leader>b :CommandTBuffer<CR>
 nnoremap <silent> <Leader>r :CommandTFlush<CR>
 
 " Wildcard config for file listing / completion
-set wildignore=*.bak,*.dll,*dist,.exe,*.gif,*.hi,*.jpg,*.o,*.obj*,*.png,*.pyc,*.p_o,*.p_hi,_*/*
-set wildmode=list:longest           " File completion bash-style
+set wildmode=list:longest " bash-style file completion
+set wildignore=_*/*
+set wildignore+=*.exe,.dll
+set wildignore+=*.gif,*.jpg,*.png
+set wildignore+=*.o,*.hi,*.p_o,*.p_hi,*.obj*,*.pyc
+set wildignore+=dist/*,build/*,cmake/*
 
 " Enable Pathogen
 call pathogen#infect()
