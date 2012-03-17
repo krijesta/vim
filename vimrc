@@ -290,10 +290,13 @@ au BufNewFile,BufRead *.fs set filetype=fs
 au BufNewFile,BufRead *.gml set filetype=config
 
 " Arduino
-au BufNewFile,BufRead *.pde set filetype=arduino
+au BufNewFile,BufRead *.pde,*.ino set filetype=arduino
+au FileType arduino setlocal makeprg=make\ -C\ ./build
+au FileType arduino setlocal shellpipe=&>
 au FileType arduino setlocal autoindent
 au FileType arduino setlocal smartindent
 au FileType arduino setlocal cindent
+au FileType arduino call EnableWhitespace('et')
 
 " C
 au BufNewFile,BufRead *.dump-cmm set filetype=c
