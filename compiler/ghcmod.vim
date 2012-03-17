@@ -15,6 +15,7 @@ if !executable('ghc-mod')
 endif
 
 " set makeprg (for quickfix mode)
+" let path = shellescape(expand('%')) doesn't work on windows
 let path = expand('%')
 let check_no_lint   = '(ghc-mod\ check\ '.path.')\ \\\|\ tr\ ''\\000''\ ''\\n'''
 let check_then_lint = '(ghc-mod\ check\ '.path.'\ &\ ghc-mod\ lint\ '.path.')\ \\\|\ tr\ ''\\000''\      ''\\n'''
