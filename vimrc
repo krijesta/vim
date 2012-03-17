@@ -308,6 +308,7 @@ au FileType c call EnableWhitespace('et')
 au BufNewFile,BufRead *.hs,*.hsc,*.lhs,*.dump-simpl set filetype=haskell
 au BufNewFile,BufRead *.lhs set syntax=lhaskell
 au FileType haskell compiler ghcmod
+au FileType haskell setlocal shellpipe=&>
 au FileType haskell setlocal iskeyword+='
 au FileType haskell setlocal tabstop=4
 au FileType haskell setlocal shiftwidth=4
