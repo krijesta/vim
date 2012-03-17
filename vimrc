@@ -292,11 +292,18 @@ au BufNewFile,BufRead *.gml set filetype=config
 " Arduino
 au BufNewFile,BufRead *.pde,*.ino set filetype=arduino
 au FileType arduino setlocal makeprg=make\ -C\ ./build
-au FileType arduino setlocal shellpipe=&>
+au FileType arduino setlocal shellpipe=>/dev/null\ 2>
 au FileType arduino setlocal autoindent
 au FileType arduino setlocal smartindent
 au FileType arduino setlocal cindent
 au FileType arduino call EnableWhitespace('et')
+
+" C, CPP, Arduino
+au FileType c,cpp,arduino setlocal path=.
+au FileType c,cpp,arduino setlocal path+=/usr/include
+au FileType c,cpp,arduino setlocal path+=/usr/lib/avr/include
+au FileType c,cpp,arduino setlocal path+=~/arduino-1.0/hardware/arduino/cores/arduino
+au FileType c,cpp,arduino setlocal path+=,
 
 " C
 au BufNewFile,BufRead *.dump-cmm set filetype=c
