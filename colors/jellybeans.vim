@@ -320,7 +320,7 @@ call s:X("SignColumn","a0a8b0","384048","","","")
 call s:X("Title","70b950","","bold","","")
 
 call s:X("Constant","cf6a4c","","","Red","")
-call s:X("Special","799d6a","","","Green","")
+call s:X("Special","6aadad","","","DarkCyan","")
 call s:X("Delimiter","668799","","","Grey","")
 
 call s:X("String","99ad6a","","","Green","")
