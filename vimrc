@@ -304,6 +304,7 @@ au FileType c,cpp,arduino setlocal path+=/usr/lib/avr/include
 au FileType c,cpp,arduino setlocal path+=~/arduino-1.0/hardware/arduino/cores/arduino
 au FileType c,cpp,arduino setlocal path+=~/arduino-1.0/libraries/*
 au FileType c,cpp,arduino setlocal path+=,
+au FileType c,cpp,arduino setlocal cinoptions=(1s,u0
 au FileType c,cpp,arduino syntax match cType /\<\h\w*_t\>/
 au FileType c,cpp,arduino syntax match cConstant /\<[A-Z_][A-Z0-9_]*\>/
 au FileType c,cpp,arduino call EnableWhitespace('et')
