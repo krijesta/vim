@@ -296,22 +296,20 @@ au FileType arduino setlocal shellpipe=>/dev/null\ 2>
 au FileType arduino setlocal autoindent
 au FileType arduino setlocal smartindent
 au FileType arduino setlocal cindent
-au FileType arduino call EnableWhitespace('et')
 
 " C, CPP, Arduino
 au FileType c,cpp,arduino setlocal path=.
 au FileType c,cpp,arduino setlocal path+=/usr/include
 au FileType c,cpp,arduino setlocal path+=/usr/lib/avr/include
 au FileType c,cpp,arduino setlocal path+=~/arduino-1.0/hardware/arduino/cores/arduino
+au FileType c,cpp,arduino setlocal path+=~/arduino-1.0/libraries/*
 au FileType c,cpp,arduino setlocal path+=,
-
-" C
-au BufNewFile,BufRead *.dump-cmm set filetype=c
-au FileType c syntax match cType /\h\w*_t\W/me=e-1
-au FileType c syntax match cConstant /\W[A-Z_][A-Z0-9_]*\W/ms=s+1,me=e-1
-au FileType c call EnableWhitespace('et')
+au FileType c,cpp,arduino syntax match cType /\<\h\w*_t\>/
+au FileType c,cpp,arduino syntax match cConstant /\<[A-Z_][A-Z0-9_]*\>/
+au FileType c,cpp,arduino call EnableWhitespace('et')
 
 " Haskell
+au BufNewFile,BufRead *.dump-cmm set filetype=c
 au BufNewFile,BufRead *.hs,*.hsc,*.lhs,*.dump-simpl set filetype=haskell
 au BufNewFile,BufRead *.lhs set syntax=lhaskell
 au FileType haskell compiler ghcmod
