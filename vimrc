@@ -161,8 +161,8 @@ function! s:align()
   endif
 endfunction
 
-" Ctags
-set tags=tags;/
+" Tags
+set tags=tags;/,libtags;/
 
 " Font
 if has("win32") || has("win64")
