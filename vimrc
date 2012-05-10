@@ -314,7 +314,11 @@ au BufNewFile,BufRead *.dump-cmm set filetype=c
 au BufNewFile,BufRead *.hs,*.hsc,*.lhs,*.dump-simpl set filetype=haskell
 au BufNewFile,BufRead *.lhs set syntax=lhaskell
 au FileType haskell compiler ghcmod
-au FileType haskell setlocal shellpipe=&>
+if has("win32") || has("win64")
+  au FileType haskell setlocal shellpipe=2>NUL\ 1>
+else
+  au FileType haskell setlocal shellpipe=&>
+endif
 au FileType haskell setlocal iskeyword+='
 au FileType haskell setlocal tabstop=4
 au FileType haskell setlocal shiftwidth=4
