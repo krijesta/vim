@@ -118,7 +118,7 @@ set wildignore=_*/*
 set wildignore+=*.exe,.dll
 set wildignore+=*.gif,*.jpg,*.png
 set wildignore+=*.o,*.hi,*.p_o,*.p_hi,*.obj*,*.pyc
-set wildignore+=dist/*,build/*,cmake/*
+set wildignore+=dist/*,build/*,cmake/*,cabal-dev/*
 
 " Enable Pathogen
 call pathogen#infect()
