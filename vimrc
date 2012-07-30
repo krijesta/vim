@@ -154,6 +154,10 @@ vnoremap <Leader>a; :Tabularize /:\zs/l0l1<CR>
 nnoremap <Leader>a, :Tabularize /,\zs/l0l1<CR>
 vnoremap <Leader>a, :Tabularize /,\zs/l0l1<CR>
 
+" Mardown header formatting, insert a roqw of = or - below the current line
+nnoremap <Leader>- yypVr-
+nnoremap <Leader>= yypVr=
+
 " TODO: There is an issue with this line, if you are inserting text
 " in block visual mode and wish to type a bar is will break the block 
 " insert
