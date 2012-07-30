@@ -1,4 +1,8 @@
-set nocompatible " use vim settings (rather than vi)
+" Always store vim directory in ~/.vim, even on Windows
+set runtimepath=$HOME/.vim,$VIMRUNTIME,$HOME/.vim/after
+
+" Use vim settings (rather than vi)
+set nocompatible
 
 set hidden                     " don't discard buffer when switching away
 set backspace=indent,eol,start " allow backspace over everthing
@@ -30,16 +34,10 @@ if has("multi_byte")
   set fileencodings=ucs-bom,utf-8,latin1
 endif
 
-" Compatibility with different operating systems
-if has("win32") || has("win64")
-  let g:vimdir = "~/vimfiles/"
-  let ruby_path="C:\Ruby192"
-else
-  let g:vimdir = "~/.vim/"
-endif
-let g:vimrc = g:vimdir . "vimrc"
+" Location of vimrc
+let g:vimrc = "~/.vim/vimrc"
 
-" Edit .vimrc
+" Edit vimrc
 nnoremap <Leader>v :exec ":e " . g:vimrc<CR>
 
 " Source the vimrc file after saving it
@@ -123,8 +121,12 @@ nnoremap <silent> <Leader>b :CommandTBuffer<CR>
 nnoremap <silent> <Leader>r :CommandTFlush<CR>
 
 " Wildcard config for file listing / completion
-set wildignore=*.bak,*.dll,*dist,.exe,*.gif,*.hi,*.jpg,*.o,*.obj*,*.png,*.pyc,*.p_o,*.p_hi,_*/*
-set wildmode=list:longest           " File completion bash-style
+set wildmode=list:longest " bash-style file completion
+set wildignore=_*/*
+set wildignore+=*.exe,.dll
+set wildignore+=*.gif,*.jpg,*.png
+set wildignore+=*.o,*.hi,*.p_o,*.p_hi,*.obj*,*.pyc
+set wildignore+=dist/*,build/*,cmake/*,cabal-dev/*
 
 " Enable Pathogen
 call pathogen#infect()
@@ -182,23 +184,19 @@ function! s:align()
   endif
 endfunction
 
-" Ctags
-set tags=tags;/
-
-function! Load(relative_path)
-  exec "source " . g:vimdir . a:relative_path
-endfunction
+" Tags
+set tags=tags;/,libtags;/
 
 " Color scheme
 syntax on
-call Load("enable16colors.vim")
+source ~/.vim/enable16colors.vim
 colorscheme jellybeans
 set number
 set numberwidth=5
 
 " Error Markers
-let errormarker_erroricon    = expand(g:vimdir . "icons/error.bmp")
-let errormarker_warningicon  = expand(g:vimdir . "icons/warning.bmp")
+let errormarker_erroricon    = expand("~/.vim/icons/error.bmp")
+let errormarker_warningicon  = expand("~/.vim/icons/warning.bmp")
 let errormarker_errorgroup   = "ErrorMsg"
 let errormarker_warninggroup = "WarningMsg"
 
@@ -284,6 +282,10 @@ au FileType ruby let g:rubycomplete_include_object = 1
 au FileType ruby let g:rubycomplete_include_objectspace = 1
 au FileType ruby call EnableWhitespace('et')
 
+if has("win32") || has("win64")
+  let ruby_path="C:\Ruby192"
+endif
+
 " Object J
 au BufNewFile,BufRead *.j set filetype=objj
 au BufNewFile,BufRead *.sj set filetype=javascript
@@ -295,26 +297,41 @@ au BufNewFile,BufRead *.fs set filetype=fs
 au BufNewFile,BufRead *.gml set filetype=config
 
 " Arduino
-au BufNewFile,BufRead *.pde set filetype=arduino
+au BufNewFile,BufRead *.pde,*.ino set filetype=arduino
+au FileType arduino setlocal makeprg=make\ -C\ ./build
+au FileType arduino setlocal shellpipe=>/dev/null\ 2>
 au FileType arduino setlocal autoindent
 au FileType arduino setlocal smartindent
 au FileType arduino setlocal cindent
 
-" C
-au BufNewFile,BufRead *.dump-cmm set filetype=c
-au FileType c syntax match cType /\h\w*_t\W/me=e-1
-au FileType c syntax match cConstant /\W[A-Z_][A-Z0-9_]*\W/ms=s+1,me=e-1
-au FileType c call EnableWhitespace('et')
+" C, CPP, Arduino
+au FileType c,cpp,arduino setlocal path=.
+au FileType c,cpp,arduino setlocal path+=/usr/include
+au FileType c,cpp,arduino setlocal path+=/usr/lib/avr/include
+au FileType c,cpp,arduino setlocal path+=~/arduino-1.0/hardware/arduino/cores/arduino
+au FileType c,cpp,arduino setlocal path+=~/arduino-1.0/libraries/*
+au FileType c,cpp,arduino setlocal path+=,
+au FileType c,cpp,arduino setlocal cinoptions=(1s,u0
+au FileType c,cpp,arduino syntax match cType /\<\h\w*_t\>/
+au FileType c,cpp,arduino syntax match cConstant /\<[A-Z_][A-Z0-9_]*\>/
+au FileType c,cpp,arduino call EnableWhitespace('et')
 
 " Haskell
+au BufNewFile,BufRead *.dump-cmm set filetype=c
 au BufNewFile,BufRead *.hs,*.hsc,*.lhs,*.dump-simpl set filetype=haskell
 au BufNewFile,BufRead *.lhs set syntax=lhaskell
 au FileType haskell compiler ghcmod
+if has("win32") || has("win64")
+  au FileType haskell setlocal shellpipe=2>NUL\ 1>
+else
+  au FileType haskell setlocal shellpipe=&>
+endif
 au FileType haskell setlocal iskeyword+='
 au FileType haskell setlocal tabstop=4
 au FileType haskell setlocal shiftwidth=4
+au FileType haskell setlocal path=src,,
 au FileType haskell setlocal include=^import\\s*\\(qualified\\)\\?\\s*
-au FileType haskell setlocal includeexpr=substitute(v:fname,'\\.','/','g').'.'
+au FileType haskell setlocal includeexpr=substitute(v:fname,'\\.','/','g').'.hs'
 au FileType haskell call EnableWhitespace('et')
 let hs_highlight_types = 1
 let hs_highlight_boolean = 1
@@ -324,7 +341,7 @@ au FileType haskell nnoremap <Leader>h :!hoogle <C-r><C-w><CR>
 
 " Haskell - sort then align imports
 au FileType haskell nnoremap <Leader>ai
-    \ vip:sort /import \(qualified\)\?\ */<CR> <Bar> :Tabularize /^import qualified\\|^import\\|^$<CR>
+    \ vip :sort r /\u.*/<CR> <Bar> :Tabularize /^import qualified\\|^import\\|^$<CR>
 
 " Haskell Cabal
 au BufNewFile,BufRead *.cabal set filetype=cabal
@@ -358,4 +375,4 @@ endfunction
 command! -complete=file -nargs=+ Run call s:RunShellCommand(<q-args>)
 
 " Other scripts
-call Load("whitespace.vim")
+source ~/.vim/whitespace.vim

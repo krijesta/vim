@@ -3,7 +3,7 @@ My Vim Settings
   Clone the repository to ~/.vim then create a ~/.vimrc with the following
   contents.
 
-    exe "source ~/.vim/vimrc"
+    source ~/.vim/vimrc
 
   Alternatively on machines that support symlinks (not Windows) create a
   symlink in your home directory called ~/.vimrc pointing to ~/.vim/vimrc
