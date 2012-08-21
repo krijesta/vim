@@ -62,10 +62,9 @@ nnoremap <Leader>G
   \ <Bar> lw<CR>
 
 " Search highlighting toggle
-nnoremap <F11> :set hlsearch! hlsearch?<CR>
+nnoremap <Leader><Leader> :set hlsearch! hlsearch?<CR>
 nnoremap <A-S-F11> :set hls<CR>:exec "let @/='\\<".expand("<cword>")."\\>'"<CR>
 
-nnoremap <Leader><Leader> :noh<CR>
 set nohls " search highlighting off by default
 
 " OS Copy+Paste
