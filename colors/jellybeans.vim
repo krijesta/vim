@@ -304,18 +304,18 @@ endif
 call s:X("Visual","","404040","","Black","DarkBlue")
 call s:X("Cursor","","b0d0f0","","","")
 
-call s:X("Normal","e8e8d3","151515","","White","")
-call s:X("LineNr","605958","151515","","DarkGrey","")
+call s:X("Normal","e8e8d3","212121","","White","")
+call s:X("LineNr","505050","181818","","DarkGrey","")
 call s:X("Comment","606060","","italic","Grey","")
 call s:X("Todo","8a61dc","","bold","","")
 
-call s:X("StatusLine","f0f0f0","101010","italic","","")
-call s:X("StatusLineNC","a0a0a0","181818","italic","","")
+call s:X("StatusLine","f0f0f0","000000","italic","","")
+call s:X("StatusLineNC","404040","101010","italic","","")
 call s:X("VertSplit","181818","181818","italic","","")
 
-call s:X("Folded","a0a8b0","384048","italic","Black","DarkGreen")
-call s:X("FoldColumn","a0a8b0","384048","","","")
-call s:X("SignColumn","a0a8b0","384048","","","")
+call s:X("Folded","a0a8b0","384b4b","italic","Black","DarkGreen")
+call s:X("FoldColumn","a0a8b0","384b4b","","","")
+call s:X("SignColumn","a0a8b0","384b4b","","","")
 
 call s:X("Title","70b950","","bold","","")
 
@@ -334,7 +334,7 @@ call s:X("PreProc","8fbfdc","","","LightBlue","")
 call s:X("Operator","cd6537","","","LightBlue","")
 
 call s:X("Type","ffb964","","","DarkYellow","")
-call s:X("NonText","808080","151515","","","")
+call s:X("NonText","808080","181818","","","")
 
 call s:X("SpecialKey","808080","343434","","","")
 
