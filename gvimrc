@@ -9,6 +9,8 @@ else
   set guifont=Monospace\ 15
 endif
 
-" Hide toolbar
+" Hide toolbar and scrollbars
 set guioptions-=T
+set guioptions-=r
+set guioptions-=L
 
