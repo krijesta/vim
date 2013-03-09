@@ -233,46 +233,46 @@ au BufNewFile,BufRead {,.}gitolite.rc,example.gitolite.rc set filetype=perl
 au BufNewFile,BufRead *.json set filetype=javascript
 au FileType javascript setlocal tabstop=2
 au FileType javascript setlocal shiftwidth=2
-au FileType javascript call EnableWhitespace('et')
+au FileType javascript call EnableWhitespace()
 
 " Coffeescript
 au FileType coffee setlocal tabstop=2
 au FileType coffee setlocal shiftwidth=2
 au FileType coffee setlocal makeprg=coffee\ --compile\ --lint\ %\ $*
-au FileType coffee call EnableWhitespace('et')
+au FileType coffee call EnableWhitespace()
 
 " HTML
 au FileType html setlocal tabstop=2
 au FileType html setlocal shiftwidth=2
-au FileType html call EnableWhitespace('et')
+au FileType html call EnableWhitespace()
 
 " XML
 au FileType xml setlocal tabstop=2
 au FileType xml setlocal shiftwidth=2
-au FileType xml call EnableWhitespace('et')
+au FileType xml call EnableWhitespace()
 
 " CSS
 au FileType css setlocal tabstop=2
 au FileType css setlocal shiftwidth=2
-au FileType css call EnableWhitespace('et')
+au FileType css call EnableWhitespace()
 
 " C#
 au FileType cs setlocal tabstop=4
 au FileType cs setlocal shiftwidth=4
 au FileType cs compiler msbuild
-au FileType cs call EnableWhitespace('et')
+au FileType cs call EnableWhitespace()
 
 " Visual Studio Settings
 au BufNewFile,BufRead *.vssettings set filetype=xml
 
 " PowerShell
 au BufNewFile,BufRead *.ps1 set filetype=ps1
-au FileType ps1 call EnableWhitespace('et')
+au FileType ps1 call EnableWhitespace()
 
 " Markdown
 au FileType markdown set ai comments=n:&gt;
 au FileType markdown set textwidth=72 formatoptions=tcroqn2
-au FileType markdown call EnableWhitespace('et')
+au FileType markdown call EnableWhitespace()
 
 " Ruby
 au BufNewFile,BufRead *.rb,*.ru,rakefile,vagrantfile set filetype=ruby
@@ -282,7 +282,7 @@ au FileType ruby let g:rubycomplete_buffer_loading = 1
 au FileType ruby let g:rubycomplete_classes_in_global = 1
 au FileType ruby let g:rubycomplete_include_object = 1
 au FileType ruby let g:rubycomplete_include_objectspace = 1
-au FileType ruby call EnableWhitespace('et')
+au FileType ruby call EnableWhitespace()
 
 if has("win32") || has("win64")
   let ruby_path="C:\Ruby192"
@@ -316,7 +316,7 @@ au FileType c,cpp,arduino setlocal path+=,
 au FileType c,cpp,arduino setlocal cinoptions=(1s,u0
 au FileType c,cpp,arduino syntax match cType /\<\h\w*_t\>/
 au FileType c,cpp,arduino syntax match cConstant /\<[A-Z_][A-Z0-9_]*\>/
-au FileType c,cpp,arduino call EnableWhitespace('et')
+au FileType c,cpp,arduino call EnableWhitespace()
 
 " Haskell
 au BufNewFile,BufRead *.dump-cmm set filetype=c
@@ -334,7 +334,7 @@ au FileType haskell setlocal shiftwidth=4
 au FileType haskell setlocal path=src,,
 au FileType haskell setlocal include=^import\\s*\\(qualified\\)\\?\\s*
 au FileType haskell setlocal includeexpr=substitute(v:fname,'\\.','/','g').'.hs'
-au FileType haskell call EnableWhitespace('et')
+au FileType haskell call EnableWhitespace()
 let hs_highlight_types = 1
 let hs_highlight_boolean = 1
 
@@ -349,7 +349,7 @@ au FileType haskell nnoremap <Leader>ai
 au BufNewFile,BufRead *.cabal set filetype=cabal
 au FileType cabal setlocal tabstop=2
 au FileType cabal setlocal shiftwidth=2
-au FileType cabal call EnableWhitespace('et')
+au FileType cabal call EnableWhitespace()
 
 " Heist templates
 au BufNewFile,BufRead *.tpl set filetype=html
@@ -358,7 +358,7 @@ au BufNewFile,BufRead *.tpl set filetype=html
 au BufNewFile,BufRead *.x set filetype=alex
 au FileType alex compiler ghc
 au FileType alex setlocal makeprg=alex\ %\ &&\ ghc\ -e\ :q\ %:r.hs
-au FileType alex call EnableWhitespace('et')
+au FileType alex call EnableWhitespace()
 au BufNewFile,BufRead *.y set filetype=happy
 
 " Google protobuf highlighiting
