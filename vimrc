@@ -1,6 +1,3 @@
-" Always store vim directory in ~/.vim, even on Windows
-set runtimepath=$HOME/.vim,$VIMRUNTIME,$HOME/.vim/after
-
 " Use vim settings (rather than vi)
 set nocompatible
 
