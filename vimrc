@@ -131,6 +131,14 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 
+"TODO - check if these are all still what I want
+Bundle 'loremipsum'
+Bundle 'wincent/Command-T'
+Bundle 'ap/vim-css-color'
+Bundle 'Shougo/neocomplcache'
+Bundle 'ujihisa/neco-ghc'
+Bundle 'kchmck/vim-coffee-script'
+
 " }}}
 
 " Code indenting and formatting
