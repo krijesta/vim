@@ -124,8 +124,14 @@ set wildignore+=*.gif,*.jpg,*.png
 set wildignore+=*.o,*.hi,*.p_o,*.p_hi,*.obj*,*.pyc
 set wildignore+=dist/*,build/*,cmake/*,cabal-dev/*
 
-" Enable Pathogen
-call pathogen#infect()
+" Vundle {{{
+filetype off
+set rtp+=~/.vim/bundle/vundle
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+
+" }}}
 
 " Code indenting and formatting
 filetype plugin on
