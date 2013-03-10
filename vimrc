@@ -111,11 +111,6 @@ nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
 nnoremap <F5> :w<CR> :!ghc -e main <C-R>=expand("%:p")<CR><CR>
 nnoremap <F6> :w<CR> :make<CR>
 
-" Command-T
-nnoremap <silent> <Leader>t :CommandT<CR>
-nnoremap <silent> <Leader>b :CommandTBuffer<CR>
-nnoremap <silent> <Leader>r :CommandTFlush<CR>
-
 " Wildcard config for file listing / completion
 set wildmode=list:longest " bash-style file completion
 set wildignore=_*/*
@@ -129,15 +124,22 @@ filetype off
 set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 
-Bundle 'gmarik/vundle'
-
-"TODO - check if these are all still what I want
-Bundle 'loremipsum'
-Bundle 'wincent/Command-T'
 Bundle 'ap/vim-css-color'
+Bundle 'gmarik/vundle'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'loremipsum'
+
+" Neocomplcache - switch for YCM?
 Bundle 'Shougo/neocomplcache'
 Bundle 'ujihisa/neco-ghc'
-Bundle 'kchmck/vim-coffee-script'
+let g:neocomplcache_enable_at_startup = 1
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
+" Command-T
+Bundle 'wincent/Command-T'
+nnoremap <silent> <Leader>t :CommandT<CR>
+nnoremap <silent> <Leader>b :CommandTBuffer<CR>
+nnoremap <silent> <Leader>r :CommandTFlush<CR>
 
 " }}}
 
@@ -212,10 +214,6 @@ let errormarker_erroricon    = expand("~/.vim/icons/error.bmp")
 let errormarker_warningicon  = expand("~/.vim/icons/warning.bmp")
 let errormarker_errorgroup   = "ErrorMsg"
 let errormarker_warninggroup = "WarningMsg"
-
-" Neocomplcache
-let g:neocomplcache_enable_at_startup = 1
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " Vim
 au FileType vim setlocal tabstop=2
