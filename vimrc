@@ -124,10 +124,12 @@ filetype off
 set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 
+Bundle 'airblade/vim-gitgutter'
 Bundle 'ap/vim-css-color'
 Bundle 'gmarik/vundle'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'loremipsum'
+Bundle 'tpope/vim-surround'
 
 " Neocomplcache - switch for YCM?
 Bundle 'Shougo/neocomplcache'
