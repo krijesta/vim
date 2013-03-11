@@ -124,7 +124,11 @@ filetype off
 set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 
+" Displays lines changed in the sign column, call :GitGutterToggle to
+" show/hide
 Bundle 'airblade/vim-gitgutter'
+let g:gitgutter_enabled = 0
+
 Bundle 'ap/vim-css-color'
 Bundle 'gmarik/vundle'
 Bundle 'kchmck/vim-coffee-script'
