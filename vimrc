@@ -147,6 +147,13 @@ nnoremap <silent> <Leader>t :CommandT<CR>
 nnoremap <silent> <Leader>b :CommandTBuffer<CR>
 nnoremap <silent> <Leader>r :CommandTFlush<CR>
 
+" Syntastic
+Bundle 'scrooloose/syntastic'
+let g:syntastic_mode_map = { 'mode': 'passive',
+                           \ 'active_filetypes': ['python'],
+                           \ 'passive_filetypes': [] }
+set balloondelay=100 " No use having this too big
+
 " }}}
 
 " Code indenting and formatting
