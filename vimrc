@@ -2,14 +2,9 @@
 set nocompatible
 
 set hidden                     " don't discard buffer when switching away
-set backspace=indent,eol,start " allow backspace over everthing
 set nobackup                   " do not keep backup file
-set history=50                 " keep 50 lines of command history
-set ruler                      " show cursor position
-set showcmd                    " display incomplete commands
 set incsearch                  " do incremental searching
 set autowrite                  " auto-save buffer on :make
-set laststatus=2               " Always show filename at the bottom
 set ignorecase smartcase       " Smart case matching for search
 set infercase                  " Smart case matching for autocompletion
 
@@ -20,8 +15,6 @@ command! W :w " allow saving via :W
 let mapleader = ","
 
 " File format / encoding
-set fileformats=unix,dos
-
 if has("multi_byte")
   if &termencoding == ""
     let &termencoding = &encoding
@@ -82,15 +75,11 @@ function! IPaste()
   let &virtualedit = ""
 endfunction
 
-" Cycling through buffers
+" Cycling through buffers (C-L conflicts with clear in vim-sensible)
 nnoremap <C-j> :bnext<CR>
 nnoremap <C-k> :bprevious<CR>
 nnoremap <C-l> :bdelete<CR>
 nnoremap <C-h> :b#<CR>
-nnoremap <D-j> :tabnext<CR>
-nnoremap <A-J> :tabnext<CR>
-nnoremap <D-k> :tabprevious<CR>
-nnoremap <A-K> :tabprevious<CR>
 
 " Window resizing
 nnoremap <D-left>    :vertical resize -5<cr>
@@ -134,6 +123,7 @@ Bundle 'gmarik/vundle'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'loremipsum'
 Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-sensible'
 Bundle 'tpope/vim-dispatch'
 
 " Neocomplcache - switch for YCM?
@@ -160,7 +150,6 @@ set balloondelay=100 " No use having this too big
 " Code indenting and formatting
 filetype plugin on
 filetype indent on
-set autoindent
 set tabstop=4
 set shiftwidth=4
 set expandtab
