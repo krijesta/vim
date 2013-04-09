@@ -134,6 +134,7 @@ Bundle 'gmarik/vundle'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'loremipsum'
 Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-dispatch'
 
 " Neocomplcache - switch for YCM?
 Bundle 'Shougo/neocomplcache'
