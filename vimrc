@@ -121,10 +121,12 @@ let g:gitgutter_enabled = 0
 Bundle 'ap/vim-css-color'
 Bundle 'gmarik/vundle'
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'LargeFile'
 Bundle 'loremipsum'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-sensible'
+Bundle 'tpope/vim-abolish'
 Bundle 'tpope/vim-dispatch'
+Bundle 'tpope/vim-sensible'
+Bundle 'tpope/vim-surround'
 
 " Neocomplcache - switch for YCM?
 Bundle 'Shougo/neocomplcache'
