@@ -127,6 +127,8 @@ Bundle 'tpope/vim-abolish'
 Bundle 'tpope/vim-dispatch'
 Bundle 'tpope/vim-sensible'
 Bundle 'tpope/vim-surround'
+Bundle 'bufexplorer.zip'
+Bundle 'scrooloose/nerdtree'
 
 " Neocomplcache - switch for YCM?
 Bundle 'Shougo/neocomplcache'
@@ -142,7 +144,7 @@ nnoremap <silent> <Leader>r :CommandTFlush<CR>
 
 " Syntastic
 Bundle 'scrooloose/syntastic'
-let g:syntastic_mode_map = { 'mode': 'passive',
+let g:syntastic_mode_map = { 'mode': 'active',
                            \ 'active_filetypes': ['python'],
                            \ 'passive_filetypes': [] }
 set balloondelay=100 " No use having this too big
