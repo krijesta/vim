@@ -179,8 +179,8 @@ vnoremap <Leader>a, :Tabularize /,\zs/l0l1<CR>
 " This is a more complex version of `yypVr` which works in code with leading
 " whitespace or comments
 " nnoremap <Leader>= yypVr=
-nnoremap <Leader>- yyp:call search('\w', 'c', line('.'))<CR>v$r-$
-nnoremap <Leader>= yyp:call search('\w', 'c', line('.'))<CR>v$r=$
+nnoremap <Leader>- yyp:call search('\w', 'c', line('.'))<CR>v$r-$o
+nnoremap <Leader>= yyp:call search('\w', 'c', line('.'))<CR>v$r=$o
 
 " TODO: There is an issue with this line, if you are inserting text
 " in block visual mode and wish to type a bar is will break the block 
